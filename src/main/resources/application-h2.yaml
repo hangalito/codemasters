@@ -1,0 +1,17 @@
+spring:
+  config:
+    import: classpath:application.yaml
+  datasource:
+    name: spring_boot
+    generate-unique-name: false
+    url: jdbc:h2:mem:code_masters
+    username: hangalo
+    password: fenix
+    driver-class-name: org.h2.Driver
+  jpa:
+    database: h2
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy

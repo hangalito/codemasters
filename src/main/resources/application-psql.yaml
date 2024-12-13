@@ -1,0 +1,15 @@
+spring:
+  config:
+    import: classpath:application.yaml
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/code_masters
+    username: hangalo
+    password: fenix
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    generate-ddl: true
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy

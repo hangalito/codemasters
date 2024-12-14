@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/img/favicon/favicon.png" type="image/x-icon">
+    <title>Nossos Métodos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/metodo.css}">
+</head>
+<body>
+<header th:include="fragments/frags::navbar"></header>
+
+<section class="hero">
+    <div class="container">
+        <div class="text-box">
+            <h2>Quer saber como vamos ensinar programação para si? <br>Nos explicamos <br> para você!</h2>
+            <p>
+                Os nossos métodos de ensino são desenvolvidos para maximizar a sua experiência de aprendizado,
+                combinando práticas inovadoras com uma abordagem prática e acessível. <br>
+                Por uma combinação de teoria e prática, você terá contacto com as ferramentas mais utilizadas
+                no mercado, além de acompanhamento constante e recursos didáticos</p>
+            <a href="login.html" class="button">Comece a sua jornada</a>
+        </div>
+        <div class="imag-l" style="margin-left: -60px;">
+            <img th:src="@{/img/metodo/IMG_1888.PNG}" alt="" style="width: 450px;" height="auto">
+        </div>
+    </div>
+</section>
+<br>
+<h1 style="color: white; text-align: center;">O nosso método de ensino</h1>
+<section class="methods-section">
+    <div class="grid-container">
+
+        <div class="method-card">
+            <i class="fas fa-laptop-code method-icon" style="color: #39ff14;"></i>
+            <h2>Ensino Prático</h2>
+            <p>A prática constante em exercícios de programação é essencial para a fixação do conteúdo.</p>
+        </div>
+        <div class="method-card">
+            <i class="fas fa-chalkboard-teacher method-icon" style="color: #39ff14;"></i>
+            <h2>Vídeo Aulas</h2>
+            <p>Aulas em vídeo explicativas para ensinar os conceitos de forma visual e didática.</p>
+        </div>
+        <div class="method-card">
+            <i class="fas fa-book method-icon" style="color: #39ff14;"></i>
+            <h2>Material Didático</h2>
+            <p>Oferecemos materiais em PDF detalhados para consultas rápidas e revisões aprofundadas.</p>
+        </div>
+        <div class="method-card">
+            <i class="fas fa-code method-icon" style="color: #39ff14;"></i>
+            <h2 style="color: white;">Projetos Reais</h2>
+            <p>Desenvolvimento de projetos reais para preparar você para o mercado de trabalho.</p>
+        </div>
+        <div class="method-card">
+            <i class="fas fa-users method-icon" style="color: #39ff14;"></i>
+            <h2 style="color: white;">Colaboração</h2>
+            <p>Trabalhamos em equipas para fortalecer habilidades de colaboração e versionamento de código.</p>
+        </div>
+        <div class="method-card">
+            <i class="fas fa-brain method-icon" style="color: #39ff14;"></i>
+            <h2 style="color: white;">Desafios</h2>
+            <p>Desafios diários de programação para manter a mente afiada e pronta para novos problemas.</p>
+        </div>
+        <div class="method-card">
+            <i class="fas fa-lightbulb method-icon" style="color: #39ff14;"></i>
+            <h2 style="color: white;">Inovação</h2>
+            <p>Trabalhamos com tecnologias e metodologias inovadoras para garantir que você esteja atualizado.</p>
+        </div>
+        <div class="method-card">
+            <i class="fas fa-graduation-cap method-icon" style="color: #39ff14;"></i>
+            <h2>Acompanhamento Pessoal</h2>
+            <p>Oferecemos suporte individual para garantir que você alcance os seus objetivos.</p>
+        </div>
+    </div>
+</section>
+
+<h1 style="color: white; text-align: center;">Não sabe por onde começar?</h1>
+<section class="hero">
+    <div class="container">
+        <div class="text-box">
+            <h2>Não sabe em qual curso se inscrever? <br>Nós Ajudamos você!</h2>
+            <p>
+                Se você esta em dúvida sobre qual caminho seguir, nao se preocupe.
+                Nós entendemos que escolher um curso certo pode ser um desafio,
+                por isso estamos aqui para guiar voce nessa jornada, por uma análise das suas
+                habilidades, interesses e objetivos. Oferecemos recomendações personalizadas
+                para garantir que você comece com o pé direito.
+            </p>
+        </div>
+        <div class="imag-l" style="margin-right: 60px;">
+            <img th:src="@{/img/metodo/A6E0CEA2-A2FB-4D6E-95F9-38F586295133.PNG}" alt=""
+                 style="width: 450px;" height="auto">
+        </div>
+    </div>
+</section>
+
+<div th:replace="fragments/frags::footer"></div>
+</body>
+</html>

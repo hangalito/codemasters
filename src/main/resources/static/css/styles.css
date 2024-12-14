@@ -1,0 +1,348 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+/* modo escuro/modo claro*/
+
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-mode {
+  background-color: #170448;
+  color: #ffffff;
+}
+
+button {
+  margin: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.icon {
+  font-size: 50px;
+  display: block;
+  margin-top: 20px;
+  transition: transform 0.3s;
+}
+
+/* logotipo "codemasters" */
+.logo-img {
+  width: 150px;
+  height: 100px;
+}
+
+body {
+  background-color: #170448;
+}
+
+/* cabecalho */
+header {
+  background-color: #1f0660;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Organizacao da barra de navegacao, deixando reta. */
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+/* margem entre as barras de navegacao */
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #39ff14;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+/* Efeito de mudanca de cor na barra de navegacao */
+nav ul li a:hover {
+  color: #60f774;
+}
+
+/* unica sessao no site */
+.hero {
+  background-color: #170448a0;
+  /* cor do fundo */
+  color: white;
+  /* cor do texto*/
+  padding: 50px 20px;
+}
+
+.hero .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero .text-box {
+  max-width: 50%;
+}
+
+.hero .text-box h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  margin-left: 25px;
+
+}
+
+.hero .text-box p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  margin-left: 25px;
+}
+
+/* fim de agrupamentos de conteudo */
+
+
+/* botao "Seja um desenvolvedor" */
+.hero .button {
+  background-color: #170448;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  border: 2px solid #39ff14;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: box-shadow 0.3s ease-in-out;
+  margin-left: 25px;
+}
+
+/* animacao do botao "Seja um desenvolvedor" */
+.hero .button:hover {
+  background-color: none;
+  box-shadow: 0 0 10px #3ff755, 0 0 20px #3ff755, 0 0 30px #3ff755;
+}
+
+
+
+/* icones dos cursos disponiveis */
+.container {
+  display: grid;
+  /* organiza os icones em grades */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1700px;
+  margin: 50px auto;
+  padding: 0 20px;
+  box-shadow: 0 0 40px rgba(24, 234, 210, 0.106);
+  border-radius: 15px;
+}
+
+.item {
+  background-color: #1f0660;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+  border: 2px solid #39ff14;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+
+}
+
+.item img {
+  max-width: 50px;
+  margin-bottom: 10px;
+}
+
+.item h3 {
+  margin: 0;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+}
+
+.imagens-c {
+  display: flex;
+  justify-content: space-around;
+  /* ou 'space-between' dependendo do espaço desejado */
+  margin-top: 40px;
+  flex-wrap: nowrap;
+  /* Impede que os elementos quebrem para a próxima linha */
+}
+
+
+/* icones antes do footer */
+.image-card {
+  flex: 1;
+  margin: 10px;
+  text-align: left;
+  background-color: #003366;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 200px;
+  /* Define um tamanho máximo para os cartões */
+}
+
+.img-lateral {
+  max-width: 189px;
+  margin-right: 400px;
+  border-radius: 8px;
+}
+
+.image-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 200px;
+  margin-bottom: 15px;
+}
+
+.image-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #fffbec;
+}
+
+.image-card:hover {
+  border: 2px solid #39ff14;
+}
+
+.image-card p {
+  font-size: 1em;
+  color: #fffbec;
+}
+
+.footer-container {
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  position: relative;
+  top: 80px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 100px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-section address {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-links li a {
+  text-decoration: none;
+  color: white;
+}
+
+.icones-f {
+  width: 30px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.icones-f2 {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin-right: 10px;
+}
+
+.icones-cm {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin-right: 10px;
+  border-color: black;
+}
+
+.user-menu {
+  position: relative;
+  display: inline-block;
+  width: 50;
+}
+
+.user-icon {
+  width: 20px;
+  cursor: pointer;
+}
+
+.user-info {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #150f0f85;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #003366(0, 0, 0, 0.1);
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.user-menu:hover .user-info {
+  display: block;
+}
+
+.classificacao-icon {
+  width: 25px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 2px;
+}

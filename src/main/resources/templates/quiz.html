@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Programação</title>
+    <link rel="stylesheet" href="../static/css/quiz.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Botão para iniciar o quiz -->
+    <button id="startQuizBtn" class="btn">Fazer a Prova agora</button>
+
+    <!-- Div do Quiz (oculto inicialmente) -->
+    <div id="quizContainer" class="quiz-container" style="display:none;">
+        <h2 style="color: white;">Prova Final</h2>
+        <div id="timer" style="color: white;">Tempo: <span id="timeLeft">120</span> segundos</div>
+
+        <!-- Pergunta 1 -->
+        <div class="question" style="color: white;">
+            <p>1. Qual linguagem é usada para estilizar páginas web?</p>
+            <input type="radio" name="question1" value="HTML" style="color: white;"> HTML<br>
+            <input type="radio" name="question1" value="CSS" style="color: white;"> CSS<br>
+            <input type="radio" name="question1" value="JavaScript" style="color: white;"> JavaScript<br>
+            <span class="feedback" id="feedback1"></span>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="question" style="color: white;">
+            <p>2. Qual dos seguintes é um banco de dados relacional?</p>
+            <input type="radio" name="question2" value="MongoDB"> MongoDB<br>
+            <input type="radio" name="question2" value="MySQL"> MySQL<br>
+            <input type="radio" name="question2" value="NoSQL"> NoSQL<br>
+            <span class="feedback" id="feedback2"></span>
+        </div>
+        <div class="question" style="color: white;">
+            <p>2. Qual dos seguintes é um banco de dados relacional?</p>
+            <input type="radio" name="question2" value="MongoDB"> MongoDB<br>
+            <input type="radio" name="question2" value="MySQL"> MySQL<br>
+            <input type="radio" name="question2" value="NoSQL"> NoSQL<br>
+            <span class="feedback" id="feedback2"></span>
+        </div>
+
+        <!-- Botão para enviar o quiz -->
+        <button id="submitQuizBtn" class="btn">Enviar Quiz</button>
+
+        <!-- Mostrar resultado -->
+        <div id="result" style="display:none;">
+            <i class="fas fa-trophy" id="trophyIcon"></i>
+            <p style="color: rgb(255, 255, 255);">Sua nota final é: <span id="score"></span> de 2.</p>
+            <p id="message"></p>
+            <button id="retryBtn" class="btn" style="color: rgb(18, 30, 195);
+            background-color: #ffcc00;">Tentar Novamente</button>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 120; // Duração do quiz em segundos
+let timerInterval;
+
+// Exibe o quiz ao clicar no botão
+document.getElementById('startQuizBtn').addEventListener('click', function() {
+    document.getElementById('quizContainer').style.display = 'block';
+    this.style.display = 'none';
+    startTimer();
+});
+
+// Inicia o cronômetro
+function startTimer() {
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        document.getElementById('timeLeft').textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            submitQuiz(); // Envia o quiz quando o tempo acabar
+        }
+    }, 1000);
+}
+
+// Função para calcular e mostrar a pontuação
+document.getElementById('submitQuizBtn').addEventListener('click', submitQuiz);
+
+function submitQuiz() {
+    clearInterval(timerInterval);
+    let score = 0;
+
+    // Verifica as respostas
+    const question1 = document.querySelector('input[name="question1"]:checked');
+    const question2 = document.querySelector('input[name="question2"]:checked');
+
+    // Verifica a resposta correta da questão 1 (CSS)
+    if (question1 && question1.value === "CSS") {
+        score++;
+        document.getElementById('feedback1').textContent = "Correto!";
+        document.getElementById('feedback1').style.color = "yellow";
+    } else {
+        document.getElementById('feedback1').textContent = "Incorreto! A resposta certa é CSS.";
+    }
+
+    // Verifica a resposta correta da questão 2 (MySQL)
+    if (question2 && question2.value === "MySQL") {
+        score++;
+        document.getElementById('feedback2').textContent = "Correto!";
+        document.getElementById('feedback2').style.color = "yellow";
+    } else {
+        document.getElementById('feedback2').textContent = "Incorreto! A resposta certa é MySQL.";
+    }
+
+    // Exibe o resultado
+    document.getElementById('score').textContent = score;
+    document.getElementById('message').textContent = score === 2 ? "Excelente trabalho!" : "Tente novamente para melhorar sua pontuação!";
+    document.getElementById('message').style.color='white'
+    // Mostra o troféu e o resultado
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').classList.add('show'); // Adiciona classe para animação
+}
+
+// Tentar novamente
+document.getElementById('retryBtn').addEventListener('click', function() {
+    timeLeft = 30;
+    document.getElementById('timeLeft').textContent = timeLeft;
+    document.getElementById('quizContainer').style.display = 'none';
+    document.getElementById('startQuizBtn').style.display = 'block';
+    document.getElementById('result').style.display = 'none';
+    document.getElementById('result').classList.remove('show'); // Remove classe para animação
+    document.querySelectorAll('.feedback').forEach(el => el.textContent = ""); // Limpa feedback
+});
+    </script>
+</body>
+</html>

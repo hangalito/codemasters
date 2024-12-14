@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0; /* Cor de fundo */
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color:  #ffcc00;
+    color: #003366;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+}
+
+.btn:hover {
+    background-color: #dfb306;
+}
+
+.quiz-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    background-color: #055bb0; /* Fundo branco para o quiz */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Animação ao exibir o quiz */
+}
+
+.quiz-container.show {
+    transform: scale(1.05); /* Efeito de zoom ao aparecer */
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.feedback {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: red; /* Cor do feedback */
+}
+
+#timer {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#result {
+    text-align: center; /* Centraliza o texto do resultado */
+}
+
+#trophyIcon {
+    font-size: 40px; /* Tamanho do ícone */
+    color: gold; /* Cor do ícone de troféu */
+    display: none; /* Inicialmente oculto */
+}
+
+#result.show #trophyIcon {
+    display: inline; /* Mostra o ícone ao exibir o resultado */
+}

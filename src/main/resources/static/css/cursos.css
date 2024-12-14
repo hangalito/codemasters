@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #170448;
+    text-align: center;
+  font-family: "Montserrat", sans-serif;
+
+}
+.hero {
+    background-color: #170448;
+     /* cor do fundo */
+    color: white;  /* cor do texto*/
+    padding: 50px 20px;
+}
+
+.hero .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero .text-box {
+    max-width: 50%;
+}
+
+.hero .text-box h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+
+}
+
+.hero .text-box p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    margin-left: 25px;
+}
+
+h1 {
+    color: #1e1e1e;
+}
+
+table {
+    width: 70%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    color: rgb(240, 237, 237);
+}
+
+table th, table td {
+    padding: 15px;
+    border: 1px solid #055bb0;
+    text-align: left;
+}
+
+table th {
+    background-color: #22ff00d7;
+    color:#000000;
+}
+
+header {
+    background-color: #1f0660;
+    
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-img{
+    width: 150px;
+    height: 100px;
+   }
+ /* Organizacao da barra de navegacao, deixando reta. */
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+ /* margem entre as barras de navegacao */
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #39ff14;
+    
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+ /* Efeito de mudanca de cor na barra de navegacao */
+nav ul li a:hover {
+    color: #9cff75;
+}
+.icone {
+    max-width: 5px;
+    margin-bottom: 10px;
+}
+
+.hero .button {
+    background-color: #170448;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    border: 2px solid #39ff14;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease-in-out;
+    margin-left: 25px;
+}
+ /* animacao do botao "Seja um desenvolvedor" */
+.hero .button:hover {
+    background-color: none;
+    box-shadow: 0 0 10px #3ff755, 0 0 20px #3ff755, 0 0 30px #3ff755;
+}
+footer{
+    color: #055bb0;
+    padding: -40;
+}
+.user-menu {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .user-icon {
+    width: 40px;
+    cursor: pointer;
+  }
+  
+  .user-info {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #150f0f85;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #003366(0, 0, 0, 0.1);
+    z-index: 10;
+    white-space: nowrap;
+  }
+  
+  .user-menu:hover .user-info {
+    display: block;
+  }
+.classificacao-icon{
+  width: 25px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 2px;
+}

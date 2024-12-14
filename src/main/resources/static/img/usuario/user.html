@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<div class="user-menu">
+  <img src="do-utilizador.png" alt="Ícone de usuário" class="user-icon">
+  <div class="user-info">
+    <p><strong>Nome:</strong> João Silva</p>
+    <p><strong>País:</strong> Angola</p>
+    <p><strong>Idade:</strong> 25 anos</p>
+    <p><strong>Email:</strong> joao.silva@example.com</p>
+  </div>
+</div>
+</html>
+
+<script>
+    const userMenu = document.querySelector('.user-menu');
+  const userInfo = document.querySelector('.user-info');
+  
+  userMenu.addEventListener('mouseenter', () => {
+    userInfo.style.display = 'block';
+  });
+  
+  userMenu.addEventListener('mouseleave', () => {
+    userInfo.style.display = 'none';
+  });
+</script>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" th:href="@{/css/cursos.css}">
+
+
+</head>
+<body>
+
+<header th:include="fragments/frags::navbar"></header>
+
+<section class="hero">
+    <div class="container">
+        <div class="text-box">
+            <h2>Dê início a sua jornada <br>em linguagens <br> de programação hoje.</h2>
+            <p>
+                Muitos parabens por chegar até aqui, agora eu te desafio a cumprir as suas metas enquanto programador,
+                que tal? Estude com anotações e exercite ao máximo, aproveita ao máximo o seu curso e não se esqueça,
+                programação requer muita prática, em algum momento da tua vida você se deparou com algo feito com
+                programação gosta de assistir videos no YouTube?
+            </p>
+
+        </div>
+        <img th:src="@{img/cursos/programador.png}" alt="" style="width: 380px; margin-right: 150px;" height="auto">
+
+    </div>
+</section>
+<h1 style="color: white;">Escolha o seu curso</h1>
+<br>
+
+<table id="cursosTable" class="display">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Curso</th>
+        <th>Categoria</th>
+        <th>Aulas</th>
+        <th>Carga Horária</th>
+        <th>Demonstração</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>195</td>
+        <td>Kotlin</td>
+        <td>programador</td>
+        <td>20 aulas</td>
+        <td>30.0 horas</td>
+        <td><a href="../static/img/cursos/Capa Redes  ATUALIZADA.pdf" style="color: green;
+            text-decoration: none;"> Demonstração</a></td>
+    </tr>
+    <tr>
+        <td>122</td>
+        <td>HTML</td>
+        <td>programação</td>
+        <td>10 aulas</td>
+        <td>10.0 horas</td>
+        <td><a href="#" style="color: green;
+            text-decoration: none;">Demonstração</a></td>
+    </tr>
+    <tr>
+        <td>244</td>
+        <td>CSS</td>
+        <td>programação</td>
+        <td>10 aulas</td>
+        <td>10.0 horas</td>
+        <td><a href="#" style="color: green; text-decoration: none;
+            border-radius: 100px;">Demonstração</a></td>
+    </tr>
+    <tr>
+        <td>987</td>
+        <td>JavaScript</td>
+        <td>programação</td>
+        <td>10 aulas</td>
+        <td>10.0 horas</td>
+        <td><a href="#" style="color: green;
+            text-decoration: none;">Demonstração</a></td>
+    </tr>
+    <tr>
+        <td>143</td>
+        <td>Python</td>
+        <td>programação</td>
+        <td>10 aulas</td>
+        <td>10.0 horas</td>
+        <td><a href="#" style="color: green;
+            text-decoration: none;">Demonstração</a></td>
+    </tr>
+    <tr>
+        <td>090</td>
+        <td>MySQL</td>
+        <td>Base de dados</td>
+        <td>12 aulas</td>
+        <td>12.0 horas</td>
+        <td><a href="#" style="color: green;
+        text-decoration: none;">Demonstração</a></td>
+    </tr>
+    <tr>
+        <td>347</td>
+        <td>Maria DB</td>
+        <td>Base de dados</td>
+        <td>8 aulas</td>
+        <td>8.0 horas</td>
+        <td><a href="#" style="color: green;
+    text-decoration: none;">Demonstração</a></td>
+    </tr>
+
+    <tr>
+        <td>247</td>
+        <td>C#</td>
+        <td>programação</td>
+        <td>10 aulas</td>
+        <td>10.0 horas</td>
+        <td><a href="#" style="color: green;
+    text-decoration: none;">Demonstração</a></td>
+    </tr>
+
+    <tr>
+        <td>348</td>
+        <td>Node Js</td>
+        <td>programação</td>
+        <td>11 aulas</td>
+        <td>11.0 horas</td>
+        <td><a href="#" style="color:green; text-decoration: none;">Demonstração</a></td>
+    </tr>
+
+    <tr>
+        <td>420</td>
+        <td>Linguagem C</td>
+        <td>programação</td>
+        <td>12 aulas</td>
+        <td>8.0 horas</td>
+        <td><a href="#" style="color: green;
+    text-decoration: none;">Demonstração</a></td>
+    </tr>
+    <tr>
+        <td>340</td>
+        <td>JAVA</td>
+        <td>programação</td>
+        <td>12 aulas</td>
+        <td>12.0 horas</td>
+        <td><a href="#" style="color: green;
+    text-decoration: none;">Demonstração</a></td>
+    </tr>
+    <tr>
+        <td>199</td>
+        <td>C++</td>
+        <td>programação</td>
+        <td>10 aulas</td>
+        <td>10.0 horas</td>
+        <td><a href="#" style="color: green; text-decoration: none;">Demonstração</a></td>
+    </tr>
+    <!-- Continue com os outros cursos -->
+    </tbody>
+
+</table>
+
+<h1 style="color: white;">Adquira o seu certificado</h1>
+<section class="hero">
+    <div class="container">
+        <div class="text-box">
+            <h2>
+                Concluiu o seu curso? Muitos parabens. Faça um teste de conclusão de curso e mostre que merece o
+                certificado.
+            </h2>
+            <p>
+                Parabéns pela conclusão do curso! Agora é o momento ideal para mostrar as suas habilidades e
+                conhecimentos. Realize o teste final e comprove que você merece o certificado que representa
+                todo o seu esforço e dedicação!
+            </p>
+            <!-- FIXME: fix link to quiz page -->
+            <a href="quiz.html" class="button">FAZER O TESTE AGORA</a>
+        </div>
+        <div class="imag-l" style="margin-left: -60px;">
+            <img th:src="@{/img/cursos/premio.png}" alt="" style="width: 400px;" height="auto">
+
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#cursosTable').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Code Masters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="shortcut icon" th:href="@{/img/favicon/favicon.png}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/css/sobre.css}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Conheça os Nossos Desenvolvedores</h1>
+
+    <!-- Carrossel de Desenvolvedores -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <img th:src="@{/img/about/liu.jpg}" alt="Luzílio Rogério"
+                     class="developer-img">
+                <div class="developer-name" style="text-align: center">Luzílio Rogério</div>
+                <div class="developer-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint velit molestiae, ullam fugiat
+                    recusandae cupiditate culpa dolorum laudantium, odit, est voluptatem quis voluptates. Laboriosam qui
+                    deleniti rerum repellat fuga quasi?
+                </div>
+                <div class="social-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <img th:src="@{/img/about/luena.jpg}" alt="Luena Satula"
+                     class="developer-img">
+                <div class="developer-name" style="text-align: center;">Luena Satula</div>
+                <div class="developer-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dicta explicabo nemo. Ad nobis
+                    magnam repellat officia voluptate laborum, rerum atque, harum alias ullam repudiandae modi. Ex
+                    repudiandae deleniti quod?
+                </div>
+                <div class="social-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <img th:src="@{/img/about/dev.jpg}" alt="Nuno Cassule"
+                     class="developer-img">
+                <div class="developer-name" style="text-align: center;">Nuno Cassule</div>
+                <div class="developer-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo saepe corporis rerum voluptate
+                    consectetur nostrum ipsa impedit, neque reiciendis expedita aperiam fuga eaque! Distinctio
+                    laudantium cupiditate, sapiente dignissimos tenetur magni?
+                </div>
+                <div class="social-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <img th:src="@{/img/about/dev.jpg}" alt="Bartolomeu Hangalo"
+                     class="developer-img">
+                <div class="developer-name" style="text-align: center;">Bartolomeu Hangalo</div>
+                <div class="developer-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto possimus illum, repudiandae omnis
+                    voluptatem dolorem deleniti suscipit ea doloribus perferendis sint officia ipsa dolores odit
+                    expedita recusandae nobis. Repellendus, at.
+                </div>
+                <div class="social-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <img th:src="@{/img/about/clenio.jpg}" alt="Clénio Beje"
+                     class="developer-img">
+                <div class="developer-name" style="text-align: center;">Clénio Beje</div>
+                <div class="developer-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, aut harum optio consectetur porro,
+                    quisquam alias itaque nulla unde excepturi iure saepe, nostrum adipisci dolor? Fuga suscipit
+                    accusamus explicabo placeat.
+                </div>
+                <div class="social-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <img th:src="@{/img/about/dev.jpg}" alt="Filomena da Graça"
+                     class="developer-img">
+                <div class="developer-name" style="text-align: center;">Filomena da Graça</div>
+                <div class="developer-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, aut harum optio consectetur porro,
+                    quisquam alias itaque nulla unde excepturi iure saepe, nostrum adipisci dolor? Fuga suscipit
+                    accusamus explicabo placeat.
+                </div>
+                <div class="social-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- Controles de Navegação -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+
+<!-- Incluindo o JavaScript do Swiper -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+</body>
+</html>

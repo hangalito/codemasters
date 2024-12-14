@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Disponíveis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            padding: 20px;
+            text-align: center;
+            background-color: #162447;
+            font-size: 24px;
+            color: #f9d342;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .course-block {
+            position: relative;
+            background-color: #1f4068;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .course-block:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .course-block img {
+            max-width: 60px;
+            margin-bottom: 10px;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #e43f5a;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            width: 180px;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .course-block:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Escolha seu Curso</div>
+    <div class="container">
+        <!-- Curso 1 -->
+        <div class="course-block">
+            <img src="https://via.placeholder.com/60" alt="HTML">
+            <p>Curso de HTML</p>
+            <div class="tooltip">Aprenda a criar estruturas de sites!</div>
+        </div>
+
+        <!-- Curso 2 -->
+        <div class="course-block">
+            <img src="https://via.placeholder.com/60" alt="CSS">
+            <p>Curso de CSS</p>
+            <div class="tooltip">Estilize suas páginas web com CSS!</div>
+        </div>
+
+        <!-- Curso 3 -->
+        <div class="course-block">
+            <img src="https://via.placeholder.com/60" alt="JavaScript">
+            <p>Curso de JavaScript</p>
+            <div class="tooltip">Dê interatividade aos seus sites!</div>
+        </div>
+
+        <!-- Repetir para outros cursos -->
+    </div>
+</body>
+</html>

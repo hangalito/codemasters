@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<div th:fragment="navbar">
+<header th:fragment="navbar">
     <div class="logo">
         <a th:href="@{/}">
             <img th:src="@{/img/logo.png}" alt="Code Masters" class="logo-img">
@@ -27,29 +27,36 @@
                 </li>
             </div>
             <div class="user-menu">
-                <a href="dashboard.html">
+                <a th:href="@{/auth/login}" th:if="${principal == null}">
                     <img th:src="@{/img/usuario/user2.png}" alt="Ícone de usuário"
                          class="user-icon" style="width: 35px; margin-left: -10px; margin: 0 5px;">
                     <!-- TODO: fix the margins -->
                 </a>
-                <div class="user-info">
-                    <p>
-                        <strong>Classificação do aluno:</strong>
-                        <img th:src="@{/img/usuario/medalha.png}" alt="Classificação" class="classificacao-icon">
-                    </p>
+                <section th:if="${principal != null}">
+                    <a th:href="@{/dashboard}">
+                        <img th:src="@{/img/usuario/user2.png}" alt="Ícone de usuário"
+                             class="user-icon" style="width: 35px; margin-left: -10px; margin: 0 5px;">
+                        <!-- TODO: fix the margins -->
+                    </a>
+                    <div class="user-info">
+                        <p>
+                            <strong>Classificação do aluno:</strong>
+                            <img th:src="@{/img/usuario/medalha.png}" alt="Classificação" class="classificacao-icon">
+                        </p>
 
-                    <p><strong>Nome:</strong>Jose Fernando</p>
-                    <p><strong>País:</strong> Angola</p>
-                    <p><strong>Idade:</strong> 19 anos</p>
-                    <p><strong>Sexo:</strong>M</p>
-                    <p><strong>Nível:</strong>DEV Junior</p>
-                    <p><strong>Email:</strong> fernandojose10@gmail.com</p>
-                    <p><strong>Aréa de inscrição:</strong> Programação</p>
-                </div>
+                        <p><strong>Nome:</strong>Jose Fernando</p>
+                        <p><strong>País:</strong> Angola</p>
+                        <p><strong>Idade:</strong> 19 anos</p>
+                        <p><strong>Sexo:</strong>M</p>
+                        <p><strong>Nível:</strong>DEV Junior</p>
+                        <p><strong>Email:</strong> fernandojose10@gmail.com</p>
+                        <p><strong>Aréa de inscrição:</strong> Programação</p>
+                    </div>
+                </section>
             </div>
         </ul>
     </nav>
-</div>
+</header>
 
 <div th:fragment="footer">
     <div class="footer-container">
@@ -119,17 +126,17 @@
                 <ul class="social-links">
                     <li>
                         <a href="https://linkedin.com" target="_blank">
-                            <img th:src="@{/img/login/IMG_1802.PNG}" alt="LinkedIn" class="icones-f">
+                            <img th:src="@{/img/login/instagram.png}" alt="LinkedIn" class="icones-f">
                         </a>
                     </li>
                     <li>
                         <a href="https://x.com" target="_blank">
-                            <img th:src="@{/img/login/IMG_1803.PNG}" alt="X (antigo Twitter)" class="icones-f">
+                            <img th:src="@{/img/login/facebook.png}" alt="X (antigo Twitter)" class="icones-f">
                         </a>
                     </li>
                     <li>
                         <a href="https://youtube.com" target="_blank">
-                            <img th:src="@{/img/login/IMG_1804.PNG}" alt="YouTube" class="icones-f">
+                            <img th:src="@{/img/login/google.png}" alt="YouTube" class="icones-f">
                         </a>
                     </li>
                 </ul>

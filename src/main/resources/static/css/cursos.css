@@ -4,13 +4,14 @@ body {
     font-family: Arial, sans-serif;
     background-color: #170448;
     text-align: center;
-  font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
 
 }
+
 .hero {
     background-color: #170448;
-     /* cor do fundo */
-    color: white;  /* cor do texto*/
+    /* cor do fundo */
+    color: white; /* cor do texto*/
     padding: 50px 20px;
 }
 
@@ -56,43 +57,48 @@ table th, table td {
 
 table th {
     background-color: #22ff00d7;
-    color:#000000;
+    color: #000000;
 }
 
 header {
     background-color: #1f0660;
-    
+
     color: white;
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.logo-img{
+
+.logo-img {
     width: 150px;
     height: 100px;
-   }
- /* Organizacao da barra de navegacao, deixando reta. */
+}
+
+/* Organizacao da barra de navegacao, deixando reta. */
 nav ul {
     list-style-type: none;
     display: flex;
 }
- /* margem entre as barras de navegacao */
+
+/* margem entre as barras de navegacao */
 nav ul li {
     margin: 0 15px;
 }
 
 nav ul li a {
     color: #39ff14;
-    
+
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s;
 }
- /* Efeito de mudanca de cor na barra de navegacao */
+
+/* Efeito de mudanca de cor na barra de navegacao */
 nav ul li a:hover {
     color: #9cff75;
 }
+
 .icone {
     max-width: 5px;
     margin-bottom: 10px;
@@ -110,26 +116,29 @@ nav ul li a:hover {
     transition: box-shadow 0.3s ease-in-out;
     margin-left: 25px;
 }
- /* animacao do botao "Seja um desenvolvedor" */
+
+/* animacao do botao "Seja um desenvolvedor" */
 .hero .button:hover {
-    background-color: none;
+    background-color: unset;
     box-shadow: 0 0 10px #3ff755, 0 0 20px #3ff755, 0 0 30px #3ff755;
 }
-footer{
+
+footer {
     color: #055bb0;
-    padding: -40;
+    padding: -40px;
 }
+
 .user-menu {
     position: relative;
     display: inline-block;
-  }
-  
-  .user-icon {
+}
+
+.user-icon {
     width: 40px;
     cursor: pointer;
-  }
-  
-  .user-info {
+}
+
+.user-info {
     display: none;
     position: absolute;
     top: 50px;
@@ -137,17 +146,18 @@ footer{
     background-color: #150f0f85;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px #003366(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px #003366;
     z-index: 10;
     white-space: nowrap;
-  }
-  
-  .user-menu:hover .user-info {
+}
+
+.user-menu:hover .user-info {
     display: block;
-  }
-.classificacao-icon{
-  width: 25px;
-  height: auto;
-  vertical-align: middle;
-  margin-left: 2px;
+}
+
+.classificacao-icon {
+    width: 25px;
+    height: auto;
+    vertical-align: middle;
+    margin-left: 2px;
 }

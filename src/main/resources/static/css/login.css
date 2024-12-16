@@ -139,21 +139,29 @@ input::placeholder {
 .social-icons img:hover {
     opacity: 1;
 }
-img{
+
+img {
     width: 150px;
     max-width: 170px;
-    color:#005bb5;
+    color: #005bb5;
 }
-h1{
+
+h1 {
     color: #39ff14;
     transform: translateX(-100%);
     animation: slideIn 1.5s forwards;
 }
-@keyframes slideIn{
-    from{
+
+@keyframes slideIn {
+    from {
         transform: translateX(-100%);
     }
-    to{
+    to {
         transform: translateX(0);
     }
+}
+
+.error-label {
+    color: #f93333;
+    margin: 2px auto;
 }

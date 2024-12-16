@@ -11,7 +11,7 @@
     <link rel="stylesheet" th:href="@{/css/metodo.css}">
 </head>
 <body>
-<header th:include="fragments/frags::navbar"></header>
+<header th:replace="fragments/frags::navbar"></header>
 
 <section class="hero">
     <div class="container">
@@ -22,7 +22,7 @@
                 combinando práticas inovadoras com uma abordagem prática e acessível. <br>
                 Por uma combinação de teoria e prática, você terá contacto com as ferramentas mais utilizadas
                 no mercado, além de acompanhamento constante e recursos didáticos</p>
-            <a href="login.html" class="button">Comece a sua jornada</a>
+            <a th:href="@{/auth/login}" class="button">Comece a sua jornada</a>
         </div>
         <div class="imag-l" style="margin-left: -60px;">
             <img th:src="@{/img/metodo/IMG_1888.PNG}" alt="" style="width: 450px;" height="auto">

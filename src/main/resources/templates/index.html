@@ -14,8 +14,8 @@
 </head>
 
 <body>
-<header th:include="fragments/frags::navbar"></header>
-
+<header th:replace="fragments/frags::navbar"></header>
+<p th:text="'Principal='+${pr}"></p>
 <section class="hero">
     <div class="container">
         <div class="text-box">

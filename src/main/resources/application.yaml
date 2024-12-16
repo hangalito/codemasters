@@ -2,3 +2,5 @@ spring:
   application:
     name: Code Masters
     version: 1.0
+  thymeleaf:
+    cache: false

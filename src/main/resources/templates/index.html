@@ -15,19 +15,17 @@
 
 <body>
 <header th:replace="fragments/frags::navbar"></header>
-<p th:text="'Principal='+${pr}"></p>
 <section class="hero">
     <div class="container">
         <div class="text-box">
             <h2>Você deseja aprender programação? <br>Temos um convite <br> para você!</h2>
-            <p>Transforme a sua paixão por tecnologia numa carreira de sucesso! No nosso site, oferecemos uma
-                jornada
+            <p>
+                Transforme a sua paixão por tecnologia numa carreira de sucesso! No nosso site, oferecemos uma jornada
                 completa, desde os fundamentos até as técnicas mais avançadas de programação com materiais de alta
-                qualidade,
-                incluindo PDFs detalhados e vídeos tutoriais, você terá todas as ferramentas necessárias para se
-                destacar no
-                mundo da programação.</p>
-            <a href="login.html" class="button">SEJA UM DESENVOLVEDOR</a>
+                qualidade, incluindo PDFs detalhados e vídeos tutoriais, você terá todas as ferramentas necessárias para
+                se destacar no mundo da programação.
+            </p>
+            <a th:href="@{/auth/login}" class="button">SEJA UM DESENVOLVEDOR</a>
         </div>
         <br>
         <div class="imag-l" style="margin-left: -40px;">
@@ -36,7 +34,7 @@
     </div>
 </section>
 
-<h1 style="text-align: center; color: white; position: relative; top: -25px;">DISPONÍVEIS NO NOSSO SITE</h1>
+<h1 style="text-align: center; color: white; position: relative; top: -25px;">DISPONÍVEL NO NOSSO SITE</h1>
 <div class="container">
     <div class="item">
         <img th:src="@{/img/icons/html.png}" alt="HTML">
@@ -113,7 +111,7 @@
     </div>
 </div>
 
-<div th:replace="fragments/frags::footer"></div>
+<div th:replace="~{fragments/frags::footer}"></div>
 </body>
 <script>
     const userMenu = document.querySelector('.user-menu');

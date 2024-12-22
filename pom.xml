@@ -95,15 +95,6 @@
         </dependency>
         <!--</editor-fold>-->
 
-        <!--<editor-fold desc="Utility">-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-        <!--</editor-fold>-->
-
         <!--<editor-fold desc="Testing">-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

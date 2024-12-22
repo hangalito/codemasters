@@ -1,5 +1,6 @@
 package com.masters.code;
 
+import com.masters.code.data.Sex;
 import com.masters.code.domain.customer.Customer;
 import com.masters.code.domain.customer.CustomerDto;
 import com.masters.code.service.CustomerService;
@@ -21,10 +22,11 @@ public class Application {
     @Bean
     CommandLineRunner commandLineRunner(CustomerService service, PasswordEncoder encoder) {
         return args -> {
-            Customer customer = new Customer("Abel", "Hangalo");
-            customer.setBirthdate(LocalDate.of(1999, Month.DECEMBER, 3));
-            customer.setEmail("abel@gmail.com");
+            Customer customer = new Customer("Bartolomeu", "Hangalo");
+            customer.setBirthdate(LocalDate.of(2004, Month.NOVEMBER, 10));
+            customer.setEmail("bartolomeuhangalo@gmail.com");
             customer.setPassword(encoder.encode("codemasters"));
+            customer.setSex(Sex.MALE);
             CustomerDto customerDto = service.save(customer);
             System.out.println(customerDto);
         };

@@ -27,12 +27,12 @@
                 </li>
             </div>
             <div class="user-menu">
-                <a th:href="@{/auth/login}" th:if="${principal == null}">
+                <a th:href="@{/auth/login}" th:if="${pr == null}">
                     <img th:src="@{/img/usuario/user2.png}" alt="Ícone de usuário"
                          class="user-icon" style="width: 35px; margin-left: -10px; margin: 0 5px;">
                     <!-- TODO: fix the margins -->
                 </a>
-                <section th:if="${principal != null}">
+                <section th:if="${pr != null}">
                     <a th:href="@{/dashboard}">
                         <img th:src="@{/img/usuario/user2.png}" alt="Ícone de usuário"
                              class="user-icon" style="width: 35px; margin-left: -10px; margin: 0 5px;">
@@ -44,13 +44,28 @@
                             <img th:src="@{/img/usuario/medalha.png}" alt="Classificação" class="classificacao-icon">
                         </p>
 
-                        <p><strong>Nome:</strong>Jose Fernando</p>
-                        <p><strong>País:</strong> Angola</p>
+                        <p>
+                            <strong>Nome:</strong>
+                            <span th:text="${pr.fullName}"></span>
+                        </p>
+                        <!-- TODO: devemos mesmo armazenar o pais do estudante?? -->
+                        <!-- <p><strong>País:</strong> Angola</p>-->
+                        <!-- TODO: resolver o método para calcular a idade com base na data de nascimento -->
                         <p><strong>Idade:</strong> 19 anos</p>
-                        <p><strong>Sexo:</strong>M</p>
+                        <p>
+                            <strong>Sexo:</strong>
+                            <span th:text="${pr.sex}"></span>
+                        </p>
+                        <!-- TODO: e quanto ao nivel? -->
                         <p><strong>Nível:</strong>DEV Junior</p>
-                        <p><strong>Email:</strong> fernandojose10@gmail.com</p>
-                        <p><strong>Aréa de inscrição:</strong> Programação</p>
+                        <p>
+                            <strong>Email:</strong>
+                            <span th:text="${pr.email}"></span>
+                        </p>
+                        <p>
+                            <strong>Aréa de inscrição:</strong>
+                            Programação
+                        </p>
                     </div>
                 </section>
             </div>

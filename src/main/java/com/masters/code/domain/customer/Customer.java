@@ -1,6 +1,6 @@
 package com.masters.code.domain.customer;
 
-import com.masters.code.data.Sexo;
+import com.masters.code.data.Sex;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -22,25 +22,20 @@ import static jakarta.persistence.TemporalType.TIMESTAMP;
 @Entity
 @Table(name = "cliente")
 public class Customer implements Serializable, Comparable<Customer>, UserDetails {
-
     @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     @NotBlank(message = "O name é obrigatório")
     private String name;
-
     @NotBlank(message = "O surname é obrigatório")
     private String surname;
-
     @Temporal(DATE)
     private LocalDate birthdate;
-
     @Enumerated(EnumType.STRING)
-    private Sexo sex;
+    private Sex sex;
 
     @Temporal(TIMESTAMP)
     @Column(updatable = false)
@@ -88,6 +83,10 @@ public class Customer implements Serializable, Comparable<Customer>, UserDetails
         this.surname = surname;
     }
 
+    public String getFullName() {
+        return name + " " + surname;
+    }
+
     public LocalDate getBirthdate() {
         return birthdate;
     }
@@ -96,11 +95,11 @@ public class Customer implements Serializable, Comparable<Customer>, UserDetails
         this.birthdate = dataDeNascimento;
     }
 
-    public Sexo getSex() {
+    public Sex getSex() {
         return sex;
     }
 
-    public void setSex(Sexo sex) {
+    public void setSex(Sex sex) {
         this.sex = sex;
     }
 

@@ -5,10 +5,8 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum Sex {
-    MALE("M", "Masculino"),
-    FEMALE("F", "Feminino");
-
-    private final String abbrev;
+public enum FocusArea {
+    PROGRAMMING("Programação"),
+    NETWORKING("Redes de Computador");
     private final String desc;
 }

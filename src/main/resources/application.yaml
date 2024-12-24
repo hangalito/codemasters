@@ -4,3 +4,4 @@ spring:
     version: 1.0
   thymeleaf:
     cache: false
+    enable-spring-el-compiler: true

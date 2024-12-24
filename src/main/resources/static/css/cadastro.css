@@ -1,9 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-}
+@import "reset.css";
 
 body {
     display: flex;
@@ -11,7 +6,6 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #170448;
-    
     color: white;
 }
 
@@ -20,16 +14,13 @@ body {
     width: 900px;
     height: 600px;
     background: rgba(22, 9, 86, 0.9);
-    
     border-radius: 10px;
     overflow: hidden;
-    
 }
 
 .welcome-section {
     flex: 1;
     background: rgba(15, 3, 72, 0.679);
-    
     color: white;
     display: flex;
     flex-direction: column;
@@ -53,28 +44,23 @@ body {
 .form-section {
     flex: 1.5;
     background: rgba(22, 9, 86, 0.9);
-    
+
     color: white;
     padding: 40px;
+    overflow-y: scroll;
 }
 
-.sign-up-form h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
+.sign-up-form {
+    display: flex;
+    flex-flow: column wrap;
 }
 
-.sign-up-form label {
-    display: block;
-    font-size: 14px;
-    margin: 10px 0 5px;
+.sign-up-form .error-label {
+    color: #f93333;
 }
 
-.sign-up-form input,
-.sign-up-form select {
-    width: 100%;
+.sign-up-form input, .sign-up-form select {
     padding: 10px;
-    margin-bottom: 15px;
     border: none;
     border-radius: 5px;
     font-size: 14px;
@@ -82,36 +68,79 @@ body {
     color: #ffffff;
 }
 
+.sign-up-form .field {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 4px;
+    margin: 6px 0;
+}
+
+.sign-up-form .field, .sign-up-form input {
+    flex-grow: 1;
+}
+
+.sign-up-form section:where(.name, .contact, .basic-info) {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.sign-up-form .term {
+    color: rgb(8, 170, 8);
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    gap: 8px;
+    width: max-content;
+    margin: 6px 0;
+}
 
 .sign-up-submit {
     width: 100%;
     padding: 10px;
     background-color: #12da07;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     color: rgb(6, 7, 6);
     font-size: 16px;
     cursor: pointer;
-    margin-top: 10px;
+    margin: 8px 0;
 }
 
 .sign-up-submit:hover {
     background-color: #39ff14;
 }
-.logo-img{
+
+.logo-img {
     width: 150px;
     height: 100px;
-   }
-h1{
+}
+
+h1 {
     color: #39ff14;
     transform: translateX(-100%);
     animation: slideIn 1.5s forwards;
 }
-@keyframes slideIn{
-    from{
+
+@keyframes slideIn {
+    from {
         transform: translateX(-100%);
     }
-    to{
+    to {
         transform: translateX(0);
+    }
+}
+
+
+@media (max-width: 680px) {
+    .welcome-section {
+        display: none;
+    }
+
+    .container {
+        height: 100%;
+        margin: 4px auto;
+        justify-content: center;
+        justify-items: center;
+        overflow: hidden;
     }
 }

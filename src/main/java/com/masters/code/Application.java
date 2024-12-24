@@ -1,9 +1,9 @@
 package com.masters.code;
 
+import com.masters.code.data.FocusArea;
 import com.masters.code.data.Sex;
-import com.masters.code.domain.customer.Customer;
-import com.masters.code.domain.customer.CustomerDto;
-import com.masters.code.service.CustomerService;
+import com.masters.code.domain.customer.Student;
+import com.masters.code.service.StudentService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Bean;
@@ -20,15 +20,17 @@ public class Application {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(CustomerService service, PasswordEncoder encoder) {
+    CommandLineRunner commandLineRunner(StudentService service, PasswordEncoder encoder) {
         return args -> {
-            Customer customer = new Customer("Bartolomeu", "Hangalo");
-            customer.setBirthdate(LocalDate.of(2004, Month.NOVEMBER, 10));
-            customer.setEmail("bartolomeuhangalo@gmail.com");
-            customer.setPassword(encoder.encode("codemasters"));
-            customer.setSex(Sex.MALE);
-            CustomerDto customerDto = service.save(customer);
-            System.out.println(customerDto);
+            Student student = new Student();
+            student.setName("Bartolomeu");
+            student.setSurname("Hangalo");
+            student.setBirthdate(LocalDate.of(2004, Month.NOVEMBER, 10));
+            student.setEmail("bartolomeuhangalo@gmail.com");
+            student.setPassword(encoder.encode("codemasters"));
+            student.setSex(Sex.MALE);
+            student.setFocus(FocusArea.PROGRAMMING);
+            System.out.println(service.save(student));
         };
     }
 

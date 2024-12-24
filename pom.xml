@@ -95,6 +95,11 @@
         </dependency>
         <!--</editor-fold>-->
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
         <!--<editor-fold desc="Testing">-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

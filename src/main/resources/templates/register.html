@@ -1,67 +1,97 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../static/img/favicon/favicon.png" type="image/x-icon">
     <title>Cadastro-Code Masters</title>
+    <link rel="shortcut icon" th:href="@{/img/favicon/favicon.png}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/cadastro.css">
+          rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/cadastro.css}">
 </head>
 <body>
-    <div class="container">
-        <div class="welcome-section">
+<div class="container">
+    <div class="welcome-section">
 
-        <h1>JUNTE-SE A FAMILIA</h1>
-            <p>Code Masters, parabéns por chegar aqui, sinal de que tem vontade de <br> se tornar um desenvolvedor.</p>
-            <p>Para criar sua conta, preencha o formulário.</p>
-        </div>
-        <div class="form-section">
-            <form class="sign-up-form">
-                <div class="logodois">
-                    <a href="index.html">
-                    <img src="../static/img/index%20imagem/IMG_2566-removebg-preview - cópia.png" alt="logo" class="logo-img">
-                  </a>
-                  <div>
-
-                <select name="Genero" id="">
-                    <option value="Femenino">
-                        Escolher Genero
-                    </option>
-                    <option value="masculino">
-                        Masculino
-                    </option>
-                    <option value="Femenino">
-                        Femenino
-                    </option>
-
-                </select>
-            </div>
-                  <form action="register.php">
-                    <label for="username">Nome Completo</label>
-                    <input type="text" id="username" name="username" required>
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="password">Palavra-Passe</label>
-                    <input type="password" id="password" name="password" required>
-
-
-                    <div class="term">
-
-                     <p style="color: rgb(8, 170, 8);">Aceitar termos e condições. <br>
-                    </p>
-
-
-                    </div>
-                </form>
-               <a href="dashboard.html">
-                <button type="submit" class="sign-up-submit" style="border-radius: 15px;">Cadastrar</button>
-            </a>
-            </form>
-        </div>
+        <h1>JUNTE-SE A FAMÍLIA</h1>
+        <p>Code Masters, parabéns por chegar aqui, sinal de que tem vontade de se tornar um desenvolvedor.</p>
+        <p>Para criar a sua conta, preencha o formulário.</p>
     </div>
+    <div class="form-section">
+        <div class="logodois">
+            <a th:href="@{/}">
+                <img th:src="@{/img/index/logo.png}" alt="logo" class="logo-img">
+            </a>
+        </div>
+        <form class="sign-up-form" method="post" th:action="@{/auth/register}">
+
+            <section class="name">
+                <div class="field">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" th:value="${student.name}"
+                           required placeholder="Digite o seu nome">
+                    <small class="error-label" th:errors="${student.name}">ERROR</small>
+                </div>
+
+                <div class="field">
+                    <label for="surname">Sobrenome</label>
+                    <input type="text" id="surname" name="surname" th:value="${student.surname}"
+                           required placeholder="Digite o seu sobrenome">
+                    <small class="error-label" th:errors="${student.surname}">ERROR</small>
+                </div>
+            </section>
+
+            <section class="basic-info">
+                <div class="field">
+                    <label for="sex">Género</label>
+                    <select id="sex" name="sex" th:value="${student.sex}">
+                        <option th:value="null">Selecione uma opção</option>
+                        <option th:each="gender : ${genders}" th:value="${gender}"
+                                th:text="${gender.desc}">
+                        </option>
+                    </select>
+                    <small class="error-label" th:errors="${student.sex}">ERROR</small>
+                </div>
+                <div class="field">
+                    <label for="birthdate">Data de nascimento</label>
+                    <input type="date" name="birthdate" id="birthdate" th:value="${student.birthdate}">
+                    <small class="error-label" th:errors="${student.birthdate}">ERROR</small>
+                </div>
+            </section>
+
+            <section class="contact">
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" th:value="${student.email}"
+                           required placeholder="Digite o seu melhor email">
+                    <small class="error-label" th:errors="${student.email}">ERROR</small>
+                </div>
+            </section>
+
+            <div class="field">
+                <label for="password">Palavra-Passe</label>
+                <input type="password" id="password" name="password" th:value="${student.password}"
+                       required placeholder="Digite a sua palavra-passe">
+                <small class="error-label" th:errors="${student.password}">ERROR</small>
+            </div>
+
+            <div class="field">
+                <label for="focus">Área</label>
+                <select id="focus" name="focus" th:value="${student.focus}">
+                    <option data-th-value="null">Selecione uma opção</option>
+                    <option th:each="area : ${areas}" th:value="${area}"
+                            th:text="${area.desc}"></option>
+                </select>
+                <small class="error-label" th:errors="${student.focus}">ERROR</small>
+            </div>
+
+            <div class="term">
+                <label for="terms">Aceitar termos e condições.</label>
+                <input type="checkbox" id="terms" name="terms" required>
+            </div>
+            <button type="submit" class="sign-up-submit">Cadastrar</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 package com.masters.code.config;
 
-import com.masters.code.domain.customer.CustomerRepository;
+import com.masters.code.domain.customer.StudentRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -33,7 +33,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    UserDetailsService userDetailsService(CustomerRepository repo) {
+    UserDetailsService userDetailsService(StudentRepository repo) {
         return email -> repo.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException(""));
     }

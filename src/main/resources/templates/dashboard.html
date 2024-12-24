@@ -1,207 +1,237 @@
+<!-- FIXME: esta pagina requer muito trabalho ... -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-    <link rel="shortcut icon" href="../static/img/favicon/favicon.png" type="image/x-icon">
-     <title>Dashboard</title>
-  <link rel="stylesheet" href="../static/css/dashboard.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" th:href="@{/img/favicon/favicon.png}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}" type="text/css">
 </head>
 <body>
-  <div class="dashboard">
+<div class="dashboard">
 
     <aside class="sidebar">
-      <div class="logo">
-     <a href="index.html">
-        <img src="../static/img/logo.png" alt="Logo" id="logo"></a>
-        <ul>
-            <li>Meu Painel</li>
-            <li>Lições</li>
-            <li>Agenda</li>
-           <a href="cursos2.html" style="text-decoration: none; color: white  ;"><li>Cursos</li></a>
-            <li>Comunidade</li>
-            <li>Definiçoes</li>
-          </ul>
-          <h3 style="color: #06f215;">Notifições</h3> <br>
-      </div>
-
-      <div style="background-color: #dadbe5;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-
+        <div class="logo">
+            <a th:href="@{/}">
+                <img th:src="@{/img/logo.png}" alt="Logo" id="logo">
+            </a>
+            <ul class="nav-items">
+                <li>
+                    <a class="nav-item" href="#">Meu Painel</a>
+                </li>
+                <li>
+                    <a class="nav-item" href="#">Lições</a>
+                </li>
+                <li>
+                    <a class="nav-item" href="#">Agenda</a>
+                </li>
+                <li>
+                    <!-- TODO: point to cursos2.html -->
+                    <a class="nav-item" href=""> Cursos</a>
+                </li>
+                <li>
+                    <a class="nav-item" href="#">Comunidade</a>
+                </li>
+                <li>
+                    <a class="nav-item" href="#">Definições</a>
+                </li>
+            </ul>
         </div>
-        <div style="margin-top: -600px;">
-          <div style="display: flex; align-items: center; background-color: #2b3149; padding: 10px; border-radius: 8px; margin-bottom: 10px; border: 2px solid rgb(2, 250, 2);">
-            <img src="../static/img/sobre%20imagens/IMG_2477 2.jpg" alt="Profile" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
-            <div style="flex: 1;">
-              <div style="font-size: 14px;">Maria Lemos</div>
-              <div style="font-size: 14px; color: #a0a8c3;">Programadora</div>
-            </div>
-            <div style="display: flex; gap: 10px;">
-              <a href="#" style="color: #89cff0;"><img src="../static/img/dashboard/sino-de-notificacao.png" alt="Message" style="width: 20px;"></a>
-              <a href="#" style="color: #89cff0;"><img src="../static/img/dashboard/e-mail.png" alt="Call" style="width: 20px;"></a>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; background-color: #2b3149; padding: 10px; border-radius: 8px; border: 2px solid
-          rgb(3, 248, 3);" >
-            <img src="../static/img/sobre%20imagens/IMG_2477 2.jpg" alt="Profile" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
-            <div style="flex: 1;">
-              <div style="font-size: 14px;">Evania Rogerio</div>
-              <div style="font-size: 14px; color: #a0a8c3;">Programadora</div>
-            </div>
-            <div style="display: flex; gap: 10px;">
-              <a href="#" style="color: #89cff0;"><img src="../static/img/dashboard/sino-de-notificacao.png" alt="Message" style="width: 20px;"></a>
-              <a href="#" style="color: #89cff0;"><img src="../static/img/dashboard/e-mail.png" alt="Call" style="width: 20px;"></a>
-            </div>
-          </div>
-        </div>
-      </div>
 
-    <a href="index.html"> <button style="border-radius: 15px; background-color: rgb(25, 234, 25);
-      color: #000; font-size: 20px;">Sair</button></a>
+        <section class="notification-section">
+            <h3 class="notification-header-title">Notificações</h3>
+            <div class="notification-content">
+                <div class="notification-card">
+                    <img th:src="@{/img/about/dev.jpg}" alt="Profile" class="notification-image">
+                    <div style="flex: 1;">
+                        <div class="not-title">Maria Lemos</div>
+                        <div class="not-subtitle">Programadora</div>
+                    </div>
+                    <div class="actions">
+                        <a href="#">
+                            <img th:src="@{/img/dashboard/sino-de-notificacao.png}"
+                                 alt="Message" class="not-action">
+                        </a>
+                        <a href="#" title="Enviar email">
+                            <img th:src="@{/img/dashboard/e-mail.png}"
+                                 alt="Email" class="not-action">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="notification-card">
+                    <img th:src="@{/img/about/dev.jpg}" alt="Profile" class="notification-image">
+                    <div style="flex: 1;">
+                        <div class="not-title">Evania Rogerio</div>
+                        <div class="not-subtitle">Programadora</div>
+                    </div>
+                    <div class="actions">
+                        <a href="#">
+                            <img th:src="@{/img/dashboard/sino-de-notificacao.png}"
+                                 alt="Message" class="not-action">
+                        </a>
+                        <a href="#" title="Enviar email">
+                            <img th:src="@{/img/dashboard/e-mail.png}"
+                                 alt="Call" class="not-action">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <a th:href="@{/auth/logout}" class="button">Sair</a>
     </aside>
 
 
     <main>
-      <header>
+        <header>
+            <input type="text" placeholder="Procurar...">
 
-        <input type="text" placeholder="Procurar..." style="border-radius: 15px; color: #06f215;" >
+            <div class="profile">
+                <img th:src="@{/img/about/dev.jpg}" alt="Profile" id="profile-pic">
+                <span>José Fernando</span>
+            </div>
+        </header>
 
-        <div class="profile">
-          <img src="../static/img/sobre%20imagens/IMG_2477 2.jpg" alt="Profile" id="profile-pic">
-          <span>José Fernando</span>
-        </div>
-      </header>
+        <!-- Secção de Boas-Vindas -->
+        <section class="welcome">
+            <div class="welcome-text">
+                <h3>Olá José!</h3>
+                <p>Você tem 3 tarefas pra hoje!</p>
+            </div>
 
-      <!-- Seção de Boas-Vindas -->
-      <section class="welcome">
-        <div class="welcome-text">
-          <h3>Olá José!</h3>
-          <p>Você tem 3 tarefas pra hoje!</p>
-        </div>
+            <div class="welcome-image">
+                <img th:src="@{/img/dashboard/receber.png}" alt="Welcome Image" id="welcome-image">
+            </div>
+        </section>
 
-        <div class="welcome-image">
-          <img src="../static/img/dashboard/receber.png" alt="Welcome Image" id="welcome-image"
-               style="width: 110px;">
-        </div>
-      </section>
+        <!-- Desempenho -->
+        <section class="performance">
+            <h1>Gráfico de Desempenho</h1>
+            <p class="performance-desc">
+                93%
+                <span>Concluído de todos os cursos inscritos.</span>
+            </p>
+            <div class="chart">
+                <div class="bar">
+                    <div class="algorithms"></div>
+                    <div class="bar-label"><br></div>
+                    <br><span>MySql</span>
+                </div>
+                <div class="bar">
+                    <div class="oop"></div>
+                    <div class="bar-label"><br></div>
+                    <br><span>C++</span>
+                </div>
+                <div class="bar">
+                    <div class="database"></div>
+                    <div class="bar-label"><br></div>
+                    <br><span>C#</span>
+                </div>
+                <div class="bar">
+                    <div class="web-dev"></div>
+                    <div class="bar-label"><br></div>
+                    <br><span>React</span>
+                </div>
+                <div class="bar">
+                    <div class="mobile"></div>
+                    <div class="bar-label"><br></div>
+                    <br><span>Python</span>
+                </div>
+                <div class="bar">
+                    <div class="machine-learning"></div>
+                    <div class="bar-label"><br></div>
+                    <br><span>Java</span>
+                </div>
+            </div>
 
-      <!-- Desempenho -->
-      <section class="performance">
-
-        <h1>Grafico de Desempenho</h1>
-  <div style="font-size: 24px; margin-bottom: 10px;">93% <span style="font-size: 16px;">Concluido de todos os cursos inscritos.</span></div>
-  <div class="chart">
-    <div class="bar">
-      <div class="algorithms"></div>
-      <div class="bar-label"><br></div><br><span>MySql</span>
-    </div>
-    <div class="bar">
-      <div class="oop"></div>
-      <div class="bar-label"><br></div><br><span>C++</span>
-    </div>
-    <div class="bar">
-      <div class="database"></div>
-      <div class="bar-label"><br></div><br><span>C#</span>
-    </div>
-    <div class="bar">
-      <div class="web-dev"></div>
-      <div class="bar-label"><br></div><br><span>React</span>
-    </div>
-    <div class="bar">
-      <div class="mobile"></div>
-      <div class="bar-label"><br></div><br><span>Python</span>
-    </div>
-    <div class="bar">
-      <div class="machine-learning"></div>
-      <div class="bar-label"><br></div><br><span>Java</span>
-    </div>
-  </div>
-
-         </section>
+        </section>
 
 
         <h1>Calendário de Atividades</h1>
-  <div class="calendar">
-    <!-- Cabeçalhos dos dias -->
-    <div class="day-header">Dom</div>
-    <div class="day-header">Seg</div>
-    <div class="day-header">Ter</div>
-    <div class="day-header">Qua</div>
-    <div class="day-header">Qui</div>
-    <div class="day-header">Sex</div>
-    <div class="day-header">Sáb</div>
+        <div class="calendar">
+            <!-- Cabeçalhos dos dias -->
+            <div class="day-header">Dom</div>
+            <div class="day-header">Seg</div>
+            <div class="day-header">Ter</div>
+            <div class="day-header">Qua</div>
+            <div class="day-header">Qui</div>
+            <div class="day-header">Sex</div>
+            <div class="day-header">Sáb</div>
 
-    <!-- Dias do calendário -->
-    <div class="day"></div> <!-- Dia vazio (para alinhar corretamente o início do mês) -->
-    <div class="day"></div>
-    <div class="day">1</div>
-    <div class="day">2</div>
-    <div class="day accessed">3 <span>Entrou e estudou</span></div>
-    <div class="day accessed">4 <span>Entrou e estudou</span></div>
-    <div class="day no-activity">5 <span>Entrou, mas não estudou</span></div>
-    <div class="day">6</div>
-    <div class="day accessed">7 <span>Entrou e estudou</span></div>
-    <div class="day">8</div>
-    <div class="day accessed">9 <span>Entrou e estudou</span></div>
-    <div class="day no-activity">10 <span>Entrou, mas não estudou</span></div>
-    <div class="day">11</div>
-    <div class="day">12</div>
-    <div class="day accessed">13 <span>Entrou e estudou</span></div>
-    <div class="day">14</div>
-    <div class="day">15</div>
-    <div class="day accessed">16 <span>Entrou e estudou</span></div>
-    <div class="day">17</div>
-    <div class="day">18</div>
-    <div class="day no-activity">19 <span>Entrou, mas não estudou</span></div>
-    <div class="day">20</div>
-    <div class="day accessed">21 <span>Entrou e estudou</span></div>
-    <div class="day">22</div>
-    <div class="day">23</div>
-    <div class="day no-activity">24 <span>Entrou, mas não estudou</span></div>
-    <div class="day">25</div>
-    <div class="day">26</div>
-    <div class="day accessed">27 <span>Entrou e estudou</span></div>
-    <div class="day accessed">28 <span>Entrou e estudou</span></div>
-    <div class="day">29</div>
-    <div class="day">30</div>
-  </div>
+            <!-- Dias do calendário -->
+            <div class="day"></div> <!-- Dia vazio (para alinhar corretamente o início do mês) -->
+            <div class="day"></div>
+            <div class="day">1</div>
+            <div class="day">2</div>
+            <div class="day accessed">3 <span>Entrou e estudou</span></div>
+            <div class="day accessed">4 <span>Entrou e estudou</span></div>
+            <div class="day no-activity">5 <span>Entrou, mas não estudou</span></div>
+            <div class="day">6</div>
+            <div class="day accessed">7 <span>Entrou e estudou</span></div>
+            <div class="day">8</div>
+            <div class="day accessed">9 <span>Entrou e estudou</span></div>
+            <div class="day no-activity">10 <span>Entrou, mas não estudou</span></div>
+            <div class="day">11</div>
+            <div class="day">12</div>
+            <div class="day accessed">13 <span>Entrou e estudou</span></div>
+            <div class="day">14</div>
+            <div class="day">15</div>
+            <div class="day accessed">16 <span>Entrou e estudou</span></div>
+            <div class="day">17</div>
+            <div class="day">18</div>
+            <div class="day no-activity">19 <span>Entrou, mas não estudou</span></div>
+            <div class="day">20</div>
+            <div class="day accessed">21 <span>Entrou e estudou</span></div>
+            <div class="day">22</div>
+            <div class="day">23</div>
+            <div class="day no-activity">24 <span>Entrou, mas não estudou</span></div>
+            <div class="day">25</div>
+            <div class="day">26</div>
+            <div class="day accessed">27 <span>Entrou e estudou</span></div>
+            <div class="day accessed">28 <span>Entrou e estudou</span></div>
+            <div class="day">29</div>
+            <div class="day">30</div>
+        </div>
 
 
-      <!-- Próximos eventos -->
-      <section class="upcoming-events">
-        <h3>Calendario de Eventos</h3>
-        <!--lista de eventos -->
-        <div class="events-container">
-            <div class="events-header">Próximos Eventos</div>
-            <div class="event">
-              <div>
-                <div class="event-date">4 Dez 2024</div>
-                <div class="event-title">Entrega do Projeto de Programação</div>
-              </div>
-              <div class="event-status status-upcoming">Próximo</div>
+        <!-- Próximos eventos -->
+        <section class="upcoming-events">
+            <h3>Calendario de Eventos</h3>
+            <!--lista de eventos -->
+            <div class="events-container">
+                <div class="events-header">Próximos Eventos</div>
+                <div class="event">
+                    <div>
+                        <div class="event-date">4 Dez 2024</div>
+                        <div class="event-title">Entrega do Projeto de Programação</div>
+                    </div>
+                    <div class="event-status status-upcoming">Próximo</div>
+                </div>
+                <div class="event">
+                    <div>
+                        <div class="event-date">16 Dez 2024</div>
+                        <div class="event-title">Apresentação Final do Trabalho</div>
+                    </div>
+                    <div class="event-status status-pending">Pendente</div>
+                </div>
+                <div class="event">
+                    <div>
+                        <div class="event-date">27 Dez 2024</div>
+                        <div class="event-title">Exercício de Algoritmos</div>
+                    </div>
+                    <div class="event-status status-completed">Concluído</div>
+                </div>
             </div>
-            <div class="event">
-              <div>
-                <div class="event-date">16 Dez 2024</div>
-                <div class="event-title">Apresentação Final do Trabalho</div>
-              </div>
-              <div class="event-status status-pending">Pendente</div>
-            </div>
-            <div class="event">
-              <div>
-                <div class="event-date">27 Dez 2024</div>
-                <div class="event-title">Exercício de Algoritmos</div>
-              </div>
-              <div class="event-status status-completed">Concluído</div>
-            </div>
-          </div>
-      </section>
+        </section>
     </main>
-  </div>
+</div>
 
 
 </body>

@@ -4,6 +4,7 @@ import com.masters.code.data.FocusArea;
 import com.masters.code.data.Sex;
 import com.masters.code.domain.customer.Student;
 import com.masters.code.service.StudentService;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -51,5 +52,11 @@ public class AuthController {
         }
         studentService.save(student);
         return "redirect:/dashboard";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/";
     }
 }

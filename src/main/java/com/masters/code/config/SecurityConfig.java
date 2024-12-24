@@ -12,18 +12,25 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(request -> request.anyRequest().permitAll());
+        http.authorizeHttpRequests(request -> {
+            request.requestMatchers("/img/**", "/js/**", "/css/**").permitAll();
+            request.requestMatchers("/", "/auth/**").permitAll();
+            request.anyRequest().authenticated();
+        });
         http.formLogin((form) -> {
             form.loginPage("/auth/login");
             form.usernameParameter("email")
                     .passwordParameter("password");
         });
+        http.logout(withDefaults());
         return http.build();
     }
 

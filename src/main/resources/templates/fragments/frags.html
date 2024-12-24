@@ -27,17 +27,11 @@
                 </li>
             </div>
             <div class="user-menu">
-                <a th:href="@{/auth/login}" th:if="${pr == null}">
+                <a th:href="@{/dashboard}">
                     <img th:src="@{/img/usuario/user2.png}" alt="Ícone de usuário"
                          class="user-icon" style="width: 35px; margin-left: -10px; margin: 0 5px;">
-                    <!-- TODO: fix the margins -->
                 </a>
                 <section th:if="${pr != null}">
-                    <a th:href="@{/dashboard}">
-                        <img th:src="@{/img/usuario/user2.png}" alt="Ícone de usuário"
-                             class="user-icon" style="width: 35px; margin-left: -10px; margin: 0 5px;">
-                        <!-- TODO: fix the margins -->
-                    </a>
                     <div class="user-info">
                         <p>
                             <strong>Classificação do aluno:</strong>
@@ -54,7 +48,7 @@
                         <p><strong>Idade:</strong> 19 anos</p>
                         <p>
                             <strong>Sexo:</strong>
-                            <span th:text="${pr.sex}"></span>
+                            <span th:text="${pr.sex.desc}"></span>
                         </p>
                         <!-- TODO: e quanto ao nivel? -->
                         <p><strong>Nível:</strong>DEV Junior</p>

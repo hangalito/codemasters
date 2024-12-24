@@ -71,6 +71,10 @@ public class Student implements Serializable, Comparable<Student>, UserDetails {
     @Size(min = 8, message = "A palavra passe deve conter pelo menos 8 caracteres")
     private String password;
 
+    public String getFullName() {
+        return getName() + " " + getSurname();
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("USER"));

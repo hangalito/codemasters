@@ -138,8 +138,8 @@ nav ul li a:hover {
 
 /* animacao do botao "Seja um desenvolvedor" */
 .hero .button:hover {
-    background-color: none;
-    box-shadow: 0 0 10px #3ff755, 0 0 20px #3ff755, 0 0 30px #3ff755;
+    background-color: unset;
+    box-shadow: 0 0 8px 4px #3ff75590;
 }
 
 
@@ -198,8 +198,20 @@ nav ul li a:hover {
     background-color: #003366;
     padding: 20px;
     border-radius: 8px;
-    max-width: 200px;
+    max-width: 200px;;
     /* Define um tamanho máximo para os cartões */
+}
+
+.image-card {
+    filter: sepia(15);
+    transition-property: scale;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(143, .72, 87, 20);
+}
+
+.image-card:hover {
+    filter: none;
+    scale: 111%;
 }
 
 .img-lateral {
@@ -219,10 +231,6 @@ nav ul li a:hover {
     font-size: 1.5em;
     margin-bottom: 10px;
     color: #fffbec;
-}
-
-.image-card:hover {
-    border: 2px solid #39ff14;
 }
 
 .image-card p {

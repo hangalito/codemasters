@@ -95,14 +95,14 @@
 
             <div class="profile">
                 <img th:src="@{/img/about/dev.jpg}" alt="Profile" id="profile-pic">
-                <span>José Fernando</span>
+                <span th:text="${student.fullName}"></span>
             </div>
         </header>
 
         <!-- Secção de Boas-Vindas -->
         <section class="welcome">
             <div class="welcome-text">
-                <h3>Olá José!</h3>
+                <h3>Olá, <span th:text="${student.name}"></span></h3>
                 <p>Você tem 3 tarefas pra hoje!</p>
             </div>
 

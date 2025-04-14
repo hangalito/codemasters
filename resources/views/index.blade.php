@@ -11,6 +11,9 @@
 </head>
 <body>
 <x-navbar active-page="home"/>
-Bem-vindo à Code Masters
+<div class="text-lg font-bold border-0 border-b-blue-300 bg-clip-padding">
+    Desejas aprender a programa?
+    Temos um convite para ti!
+</div>
 </body>
 </html>

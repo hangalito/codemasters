@@ -1,3 +1,4 @@
+<script src="{{asset('js/script.js')}}" defer></script>
 <nav class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
@@ -21,6 +22,7 @@
                     </svg>
                 </button>
             </div>
+
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex shrink-0 items-center">
                     <a href="{{ route('home') }}">
@@ -60,8 +62,13 @@
                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Cursos</a>
                         @endif
 
-                        <a href="#"
-                           class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+                        @if($activePage == 'support')
+                            <a href="{{ route('support') }}"
+                               class="rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white hover:bg-gray-700 hover:text-white">Suporte</a>
+                        @else
+                            <a href="{{ route('support') }}"
+                               class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Suporte</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -102,15 +109,19 @@
                         To: "transform opacity-0 scale-95"
                     -->
                     <div
-                        class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-hidden"
+                        id="navbar-profile"
+                        class="hidden right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-hidden"
                         role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                         <!-- Active: "bg-gray-100 outline-hidden", Not Active: "" -->
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                           id="user-menu-item-0">Your Profile</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                           id="user-menu-item-1">Settings</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                           id="user-menu-item-2">Sign out</a>
+                        <a href="#" class="hover:bg-gray-300 block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                           tabindex="-1"
+                           id="user-menu-item-0">Meu perfil</a>
+                        <a href="#" class="hover:bg-gray-300 block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                           tabindex="-1"
+                           id="user-menu-item-1">Definições</a>
+                        <a href="#" class="hover:bg-gray-300 block px-4 py-2 text-sm text-red-600" role="menuitem"
+                           tabindex="-1"
+                           id="user-menu-item-2">Terminar Sessão</a>
                     </div>
                 </div>
             </div>

@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
-    <title>Code Masters</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Suporte Code Masters</title>
     <link rel="shortcut icon" href="{{asset('favicon.png')}}" type="image/x-icon">
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
 </head>
 <body>
-<x-navbar active-page="home"/>
-Bem-vindo à Code Masters
+<x-navbar active-page="support"/>
+Suporte Code Masters
 </body>
 </html>

@@ -7,19 +7,17 @@
              aria-label="Homem com um portátil">
     </div>
 
-    <div class="form-login">
-        <form action="#" method="POST">
-            <div class="login-section">
-                <h3 class="login-title">Iniciar sessão</h3>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="senha" placeholder="Palavra-Passe" required>
+    <form action="#" method="POST">
+        <div class="form-login">
+            <h3 class="login-title">Iniciar sessão</h3>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="senha" placeholder="Palavra-Passe" required>
 
-                <button class="login-button" type="submit">Entrar</button>
-                <p class="create-account">
-                    Ainda não tem uma conta?
-                    <a class="create-account-link" href="{{route('home')}}"> Criar uma conta grátis </a>
-                </p>
-            </div>
-        </form>
-    </div>
+            <button class="login-button" type="submit">Entrar</button>
+            <p class="create-account">
+                Ainda não tem uma conta?
+                <a class="create-account-link" href="{{route('home')}}"> Criar uma conta grátis </a>
+            </p>
+        </div>
+    </form>
 @endsection

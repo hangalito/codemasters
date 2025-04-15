@@ -1,0 +1,128 @@
+*, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0a0f2c;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-fluid {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    background-color: #13193b;
+    border-radius: 12px;
+    padding: 5rem;
+    gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.container-fluid h1 {
+    margin: 0 0 2rem;
+}
+
+.container-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.field {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 6px;
+}
+
+.field label {
+    font-size: .81rem;
+    color: #dadada;
+    border-bottom: 1px solid #dadada37;
+}
+
+.field input, .field select {
+    padding: 6px;
+    border-radius: 6px;
+}
+
+input:invalid, select:invalid {
+    border: 1px solid red;
+}
+
+#submit {
+    background-color: #32ff7e;
+    color: black;
+    padding: 11px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#submit:hover, #submit:focus, #submit:focus-visible {
+    border: none;
+    background-color: #289551;
+}
+
+.login-tip {
+    font-size: .9847rem;
+    color: #ddd;
+    text-decoration: none;
+    text-align: center;
+}
+
+.login-link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.welcome-section {
+    margin: 5rem;
+    padding: 2rem 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+    border-radius: 12px;
+    background-image: linear-gradient(45deg, #0a0f2c, #1a202c, #3e3e3a);
+}
+
+.welcome-section .welcome-msg {
+    text-transform: uppercase;
+}
+
+.welcome-section .welcome-img {
+}
+
+
+@media screen and (max-width: 820px) {
+    .welcome-section {
+        display: none;
+    }
+
+    .container-fluid {
+        margin: 2rem;
+        padding: 2rem;
+        max-height: 90vh;
+        overflow: hidden scroll;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .container-fields {
+        display: flex;
+        flex-flow: column wrap;
+        width: min(100%, 400px);
+    }
+
+    #submit {
+        width: min(100%, 400px);
+    }
+}

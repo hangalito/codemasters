@@ -1,5 +1,6 @@
 @extends('auth.template')
 @section('title','Iniciar Sessão')
+@section('stylesheet',asset('css/login.css'))
 @section('main')
     <div class="welcome-section">
         <h1 class="welcome-msg">Bem-vindo de volta!</h1>
@@ -16,7 +17,7 @@
             <button class="login-button" type="submit">Entrar</button>
             <p class="create-account">
                 Ainda não tem uma conta?
-                <a class="create-account-link" href="{{route('home')}}"> Criar uma conta grátis </a>
+                <a class="create-account-link" href="{{route('register')}}"> Criar uma conta grátis </a>
             </p>
         </div>
     </form>

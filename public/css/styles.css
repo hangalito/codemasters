@@ -4,7 +4,13 @@ body {
 
 .container-courses {
     grid-template-columns: repeat(auto-fill, minmax(150px, 200px));
-    gap: .7350rem;
     justify-content: center;
     margin: 2rem auto;
+}
+
+@media screen and (width <= 40rem) {
+    .container-courses {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 150px));
+        justify-content: center;
+    }
 }

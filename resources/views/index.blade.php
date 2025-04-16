@@ -26,8 +26,17 @@
     </div>
     <div id="cursos">
         <h1 class="text-white text-4xl text-center">Nossos cursos</h1>
-        @foreach($cursos as $curso)
-            {{ $curso->nome}}
-        @endforeach
+        <div class="grid container-courses">
+            @foreach($cursos as $curso)
+                <div
+                    class="grid grid-cols-1 border-2 border-green-500 place-items-center px-12 rounded-md hover:bg-blue-950 hover:scale-105 transition-all">
+                    <img class="m-1 max-w-[100px]" src="{{asset('img/cursos/'.$curso->url_capa)}}"
+                         alt="Curso {{ $curso->nome }}">
+                    <p class="text-white text-2xl">
+                        {{$curso->nome}}
+                    </p>
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection

@@ -17,4 +17,14 @@ class HomeController extends Controller
             'cursos' => $cursos
         ]);
     }
+
+    public function support()
+    {
+        $faq = [
+            "" => "",
+            "" => "",
+            "" => ""
+        ];
+        return view('support')->with(["faq" => $faq]);
+    }
 }

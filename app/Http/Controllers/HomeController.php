@@ -20,11 +20,6 @@ class HomeController extends Controller
 
     public function support()
     {
-        $faq = [
-            "" => "",
-            "" => "",
-            "" => ""
-        ];
-        return view('support')->with(["faq" => $faq]);
+        return view('support');
     }
 }

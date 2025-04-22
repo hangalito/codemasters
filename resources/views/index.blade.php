@@ -9,7 +9,7 @@
     <section id="top"
              class="min-h-screen text-white gap-6 p-12 not-sm:p-6 items-center min-sm:flex min-sm:flex-row min-lg:flex-nowrap max-lg:flex-wrap-reverse max-md:flex">
         <div class="hero-content flex flex-col max-w-2xl flex-wrap gap-1">
-            <h1 class="text-4xl">Desejas tornar-te um desenvolvedor de software?</h1>
+            <h1 class="text-4xl font-bold">Desejas tornar-te um desenvolvedor de software?</h1>
             <h2 class="text-3xl text-gray-300">Temos um convite para ti!</h2>
             <p class="text-justify">
                 Transforme sua paixão por tecnologia em uma carreira de sucesso! No nosso site, oferecemos uma

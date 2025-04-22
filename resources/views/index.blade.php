@@ -2,6 +2,7 @@
 @section('title','Início')
 @section('stylesheets')
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
     @vite('resources/css/app.css')
 @endsection
 @section('content')

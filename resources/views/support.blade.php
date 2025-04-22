@@ -3,6 +3,8 @@
 @section('stylesheets')
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
+    <script src="{{asset('js/script.js')}}" defer></script>
+    <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
 @endsection
 @section('content')
     <div class="p-6">

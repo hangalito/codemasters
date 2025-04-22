@@ -1,3 +1,13 @@
+function showSidebar() {
+    const sidebar = document.getElementById('sidebar')
+    sidebar.style.display = 'flex'
+}
+
+function closeSidebar() {
+    const sidebar = document.getElementById('sidebar')
+    sidebar.style.display = 'none'
+}
+
 addEventListener("DOMContentLoaded", () => {
     const navbarProfile = document.getElementById("navbar-profile")
 

@@ -17,6 +17,7 @@ class Aluno extends Model
         'sexo_id',
         'email',
         'username',
+        'password',
     ];
 
     public function sexo()

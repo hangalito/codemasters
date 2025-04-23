@@ -42,13 +42,15 @@ body {
 
 .field label {
     font-size: .81rem;
-    color: #dadada;
+    color: #eee;
     border-bottom: 1px solid #dadada37;
 }
 
 .field input, .field select {
     padding: 6px;
     border-radius: 6px;
+    background-color: white;
+    color: black;
 }
 
 input:invalid, select:invalid {

@@ -1,28 +1,46 @@
 @extends('auth.template')
 @section('title','Criar Conta')
-@section('stylesheet',asset('css/register.css'))
+@section('stylesheet')
+    @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+@endsection
 @section('main')
     <div class="welcome-section">
-        <h1 class="welcome-msg">Seja bem-vindo à Code Masters</h1>
+        <h1 class="welcome-msg text-3xl font-semibold text-center">Seja bem-vindo à Code Masters</h1>
         <img class="welcome-img" src="{{asset('img/woman-in-a-desktop.png')}}" alt="Mulher num computador">
     </div>
-    @if($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $e)
-                    <li>{{ $e }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
     <form action="{{ route('perform-registration') }}" method="post">
         @csrf
         <div class="container-fluid">
-            <h1 class="form-title">Criar conta</h1>
-            <div class="container-fields">
+            <h1 class="form-title text-3xl font-semibold">Criar conta</h1>
+
+            @if($errors->any())
+                <div class="danger text-red-500">
+                    @error('email')
+                    <p class="text-red-600 font-sans text-center">Este email já está em uso. Por favor, tente outro.</p>
+                    @enderror
+
+                    @error('username')
+                    <p class="text-red-600 font-sans text-center">
+                        {{ $message }}
+                    </p>
+                    @enderror
+
+                    @error('password')
+                    <p class="text-red-600 font-sans text-center">A palavra-passe deve ter pelo menos 8 caracteres.</p>
+                    @enderror
+
+                    @error('password_confirmation')
+                    <p class="text-red-600 font-sans text-center">As palavras-passe não coincidem.</p>
+                    @enderror
+                </div>
+            @endif
+
+            <div class="container-fields font-sans">
                 <div class="field">
                     <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" required
+                    <input class="font-sans" type="text" id="nome" name="nome" required
                            placeholder="Digite o seu nome">
                 </div>
                 <div class="field">

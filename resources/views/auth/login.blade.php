@@ -1,16 +1,20 @@
 @extends('auth.template')
 @section('title','Iniciar Sessão')
-@section('stylesheet',asset('css/login.css'))
+@section('stylesheet')
+    @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+@endsection
 @section('main')
     <div class="welcome-section">
-        <h1 class="welcome-msg">Bem-vindo de volta!</h1>
+        <h1 class="welcome-msg text-3xl text-center font-bold">Bem-vindo de volta!</h1>
         <img class="welcome-img" src="{{asset('img/man-with-laptop.png')}}" alt="Boas vindas"
              aria-label="Homem com um portátil">
     </div>
 
     <form action="#" method="POST">
-        <div class="form-login">
-            <h3 class="login-title">Iniciar sessão</h3>
+        <div class="form-login font-sans">
+            <h3 class="login-title text-2xl font-semibold">Iniciar sessão</h3>
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="senha" placeholder="Palavra-Passe" required>
 

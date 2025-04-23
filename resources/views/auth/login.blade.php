@@ -12,11 +12,17 @@
              aria-label="Homem com um portátil">
     </div>
 
-    <form action="#" method="POST">
+    <form action="{{ route('perform-login') }}" method="POST">
+        @csrf
         <div class="form-login font-sans">
             <h3 class="login-title text-2xl font-semibold">Iniciar sessão</h3>
+
+            @if(session('error'))
+                <p class="text-red-600 text-center mt-2 mb-3">{{ session('error') }}</p>
+            @endif
+
             <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="senha" placeholder="Palavra-Passe" required>
+            <input type="password" name="password" placeholder="Palavra-Passe" required>
 
             <button class="login-button" type="submit">Entrar</button>
             <p class="create-account">

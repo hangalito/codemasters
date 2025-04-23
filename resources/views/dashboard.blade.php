@@ -8,5 +8,9 @@
     <script src="{{ asset('js/script.js') }}" defer></script>
 @endsection
 @section('content')
-    <p>{{}}</p>
+    @if(session('aluno'))
+        <p>Bem-vindo, {{ session('aluno')->nome }}!</p>
+    @else
+        <p>Não estás autenticado.</p>
+    @endif
 @endsection

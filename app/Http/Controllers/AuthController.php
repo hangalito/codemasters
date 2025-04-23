@@ -7,6 +7,7 @@ use App\Models\Escolaridade;
 use App\Models\Sexo;
 use Illuminate\Hashing\BcryptHasher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -57,6 +58,19 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        return route('dashboard');
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string',
+        ]);
+
+        $aluno = Aluno::where('email', $credentials['email'])->first();
+
+        if (!$aluno || !Hash::check($credentials['password'], $aluno->password)) {
+            return back()->with('error', 'O email ou a palavra passe introduzidos não estão correctos');
+        }
+
+        session(['aluno' => $aluno]);
+
+        return redirect()->route('dashboard');
     }
 }

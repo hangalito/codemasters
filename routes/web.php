@@ -15,7 +15,7 @@ Route::controller(AuthController::class)->prefix('auth')->group(function () {
     Route::get('register', 'registerForm')->name('register');
     Route::post('register', 'register')->name('perform-registration');
     Route::get('login', 'loginForm')->name('login');
-    Route::post('login', 'login')->name('login');
+    Route::post('login', 'login')->name('perform-login');
 });
 
 Route::get('dashboard', DashboardController::class)->name('dashboard');

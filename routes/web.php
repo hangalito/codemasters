@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\AlunoAutenticado;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
@@ -19,3 +20,4 @@ Route::controller(AuthController::class)->prefix('auth')->group(function () {
 });
 
 Route::get('dashboard', DashboardController::class)->name('dashboard');
+Route::middleware(AlunoAutenticado::class)->get('/dashboard',DashboardController::class)->name('dashboard');

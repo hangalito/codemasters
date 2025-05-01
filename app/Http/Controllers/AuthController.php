@@ -71,6 +71,6 @@ class AuthController extends Controller
 
         session(['aluno' => $aluno]);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('alunos.dashboard');
     }
 }

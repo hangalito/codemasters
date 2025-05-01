@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardAlunoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\AlunoAutenticado;
 use Illuminate\Support\Facades\Route;
@@ -20,5 +21,8 @@ Route::controller(AuthController::class)->prefix('auth')->group(function () {
 });
 
 Route::middleware(AlunoAutenticado::class)->prefix('aluno')->group(function () {
-    Route::view('/dashboard', 'alunos.dashboard')->name('alunos.dashboard');
+    Route::controller(DashboardAlunoController::class)->group(function () {
+        Route::get('dashboard', 'dashboard')->name('alunos.dashboard');
+        Route::get('cursos', 'cursos')->name('alunos.cursos');
+    });
 });

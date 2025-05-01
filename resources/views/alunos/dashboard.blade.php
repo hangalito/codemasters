@@ -1,5 +1,6 @@
 @extends('alunos.dashboard.template')
 
+@section('title', 'Dashboard do Aluno')
 @section('main')
     <h1 class="text-2xl text-white font-semibold mb-6">Bem vindo de volta, {{ session('aluno')->username }}</h1>
 

@@ -16,9 +16,9 @@ Route::controller(AuthController::class)->prefix('auth')->group(function () {
     Route::post('register', 'register')->name('perform-registration');
     Route::get('login', 'loginForm')->name('login');
     Route::post('login', 'login')->name('perform-login');
+    Route::get('logout', 'logout')->name('logout');
 });
 
-
-Route::prefix('alunos')->group(function () {
+Route::middleware(AlunoAutenticado::class)->prefix('aluno')->group(function () {
     Route::view('/dashboard', 'alunos.dashboard')->name('alunos.dashboard');
-})->middleware(AlunoAutenticado::class);
+});

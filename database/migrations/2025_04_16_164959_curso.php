@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('cursos', function (Blueprint $table) {
-            $table->uuid()->default(uuid_create());
+            $table->id();
             $table->string('nome', 75)->unique()->nullable(false);
             $table->text('desc')->nullable(false);
             $table->double('preco')->nullable(false)->default(50_000.0);

@@ -24,4 +24,9 @@ class Aluno extends Model
     {
         return $this->belongsTo(Sexo::class);
     }
+
+    public function matriculas()
+    {
+        return $this->hasMany(Matricula::class);
+    }
 }

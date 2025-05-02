@@ -24,5 +24,6 @@ Route::middleware(AlunoAutenticado::class)->prefix('aluno')->group(function () {
     Route::controller(DashboardAlunoController::class)->group(function () {
         Route::get('dashboard', 'dashboard')->name('alunos.dashboard');
         Route::get('cursos', 'cursos')->name('alunos.cursos');
+        Route::get('cursos/sala/{curso}', 'curso')->name('alunos.sala');
     });
 });

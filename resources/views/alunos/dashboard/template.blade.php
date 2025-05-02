@@ -23,7 +23,7 @@
             <a href="#" class="block py-2 px-4 rounded hover:text-white hover:bg-blue-900">Perfil</a>
             <a href="#" class="block py-2 px-4 rounded hover:text-white hover:bg-blue-900">Mensagens</a>
             <a href="{{ route('logout') }}"
-               class="block py-2 px-4 rounded hover:bg-red-500 text-red-500 hover:text-white">Terminar Sessão</a>
+               class="block py-2 px-4 rounded hover:bg-red-500 text-red-500 hover:text-white mt-auto">Terminar Sessão</a>
         </nav>
     </aside>
 

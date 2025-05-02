@@ -8,8 +8,7 @@
 @section('main')
     <div class="welcome-section">
         <h1 class="welcome-msg text-3xl text-center font-bold">Bem-vindo de volta!</h1>
-        <img class="welcome-img" src="{{asset('img/man-with-laptop.png')}}" alt="Boas vindas"
-             aria-label="Homem com um portátil">
+        <img class="welcome-img" src="{{ asset('img/man-with-laptop.png') }}" alt="Boas vindas" aria-label="Homem com um portátil">
     </div>
 
     <form action="{{ route('perform-login') }}" method="POST">

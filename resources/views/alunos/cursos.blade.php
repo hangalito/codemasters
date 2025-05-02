@@ -16,7 +16,7 @@
                 </div>
                 <div class="px-3 py-2 w-full flex gap-3">
                     <button
-                        onclick="mostrarInfo(this)"
+                        onclick="mostrarInfo(this, 'course-details')"
                         class="px-2 py-1 border-blue-900 border-2 rounded-md hover:bg-blue-900"
                         data-nome="{{ $curso->nome }}"
                         data-desc="{{ $curso->desc }}"
@@ -25,13 +25,16 @@
                         data-img="{{ asset('img/cursos/'.$curso->url_capa) }}"
                     >Ver mais
                     </button>
-                    <button class="px-2 py-1 bg-green-600 rounded-md">Inscrever-se</button>
+                    <button
+                        onclick="mostrarInfo(null, 'confirm-subscription')"
+                        class="px-2 py-1 bg-green-600 rounded-md">
+                        Inscrever-se
+                    </button>
                 </div>
             </div>
         @endforeach
     </div>
 
-    <!-- Modal -->
     <dialog id="course-details"
             class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
                rounded-lg p-4 w-full max-w-xl bg-blue-900 shadow-xl
@@ -41,30 +44,52 @@
             <h2 id="modal-title" class="text-xl font-bold text-gray-300"></h2>
             <p id="modal-desc" class="text-sm text-gray-200"></p>
             <p class="text-sm"><strong>Preço:</strong> <span id="modal-preco"></span> KZ</p>
-            <p class="text-sm"><strong>Data de Início:</strong> <span id="modal-data"></span></p>
-            <button onclick="fecharInfo()" class="bg-[#170448] text-white px-4 py-2 rounded-md self-end">Fechar</button>
+            <p class="text-sm"><strong>Data de criação:</strong> <span id="modal-data"></span></p>
+            <button onclick="fecharInfo('course-details')"
+                    class="bg-[#170448] hover:shadow-2xl hover:shadow-[#170448] text-white px-4 py-2 rounded-md self-end">
+                Fechar
+            </button>
+        </div>
+    </dialog>
+
+    <dialog id="confirm-subscription"
+            class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+               rounded-lg p-4 w-full max-w-xl bg-blue-900 shadow-xl
+               backdrop:bg-black/50 backdrop:backdrop-blur-md">
+        <p class="text-2xl text-white font-semibold font-sans">
+            Quer mesmo começar este curso?
+        </p>
+        <div class="flex flex-row flex-nowrap justify-end gap-3 mt-6 mb-1 px-2">
+            <button onclick="fecharInfo('confirm-subscription')"
+                    aria-selected="true"
+                    class="bg-green-700 hover:bg-green-500 hover:shadow-2xl hover:shadow-[#170448] text-white px-4 py-2 rounded-md self-end">
+                Sim
+            </button>
+            <button onclick="fecharInfo('confirm-subscription')"
+                    class="bg-red-700 hover:bg-red-500 hover:shadow-2xl hover:shadow-[#170448] text-white px-4 py-2 rounded-md self-end">
+                Não
+            </button>
         </div>
     </dialog>
 @endsection
 
 <script>
-    function mostrarInfo(btn) {
-        const dialog = document.getElementById('course-details');
-        document.getElementById('modal-title').textContent = btn.dataset.nome;
-        document.getElementById('modal-desc').textContent = btn.dataset.desc;
-        document.getElementById('modal-preco').textContent = btn.dataset.preco;
-        document.getElementById('modal-data').textContent = btn.dataset.data;
-        document.getElementById('modal-img').src = btn.dataset.img;
+    function mostrarInfo(btn, dialogId) {
+        const dialog = document.getElementById(dialogId);
 
-        if (!dialog.open) {
-            dialog.showModal(); // este comando é o que realmente faz o modal aparecer
+        if (btn !== null) {
+            document.getElementById('modal-title').textContent = btn.dataset.nome;
+            document.getElementById('modal-desc').textContent = btn.dataset.desc;
+            document.getElementById('modal-preco').textContent = btn.dataset.preco;
+            document.getElementById('modal-data').textContent = btn.dataset.data;
+            document.getElementById('modal-img').src = btn.dataset.img;
         }
+
+        dialog.showModal();
     }
 
-    function fecharInfo() {
-        const dialog = document.getElementById('course-details');
-        if (dialog.open) {
-            dialog.close();
-        }
+    function fecharInfo(dialogId) {
+        const dialog = document.getElementById(dialogId);
+        dialog.close();
     }
 </script>

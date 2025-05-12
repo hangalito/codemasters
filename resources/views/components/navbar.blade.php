@@ -80,7 +80,7 @@
                 Suporte
             </a>
 
-            <a href="#" class="w-full rounded-md px-3 py-2 text-sm font-medium text-white mt-auto mb-3 bg-green-500 hover:bg-green-600">
+            <a href="{{ route('login') }}" class="w-full rounded-md px-3 py-2 text-sm font-medium text-white mt-auto mb-3 bg-green-500 hover:bg-green-600">
                 Entrar
             </a>
         </nav>

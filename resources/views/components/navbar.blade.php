@@ -39,6 +39,11 @@
                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-900 hover:text-white">
                             Suporte
                         </a>
+
+                        <a href="{{ route('login') }}"
+                           class="rounded-md px-6 py-1 text-white bg-green-500 hover:bg-green-600">
+                            Entrar
+                        </a>
                     </div>
                 </div>
             </div>
@@ -73,6 +78,10 @@
             <a href="{{ route('support') }}"
                class="w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-900 hover:text-white">
                 Suporte
+            </a>
+
+            <a href="#" class="w-full rounded-md px-3 py-2 text-sm font-medium text-white mt-auto mb-3 bg-green-500 hover:bg-green-600">
+                Entrar
             </a>
         </nav>
     </div>

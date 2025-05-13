@@ -17,18 +17,18 @@
                 <div class="px-3 py-2 w-full flex gap-3">
                     <button
                         onclick="mostrarInfo(this, 'course-details')"
-                        class="px-2 py-1 border-blue-900 border-2 rounded-md hover:bg-blue-900"
+                        class="px-2 py-1 border-blue-900 border-2 rounded-md hover:bg-blue-900 text-2xl"
                         data-nome="{{ $curso->nome }}"
                         data-desc="{{ $curso->desc }}"
                         data-preco="{{ number_format($curso->preco, 2, ',', '.') }}"
                         data-data="{{ \Carbon\Carbon::parse($curso->created_at)->format('d/m/Y') }}"
-                        data-img="{{ asset('img/cursos/'.$curso->url_capa) }}"
-                    >Ver mais
+                        data-img="{{ asset('img/cursos/'.$curso->url_capa) }}">
+                        Ver mais
                     </button>
                     <button
                         onclick="mostrarInfo(null, 'confirm-subscription')"
                         class="px-2 py-1 bg-green-600 rounded-md">
-                        Inscrever-se
+                        Começar
                     </button>
                 </div>
             </div>

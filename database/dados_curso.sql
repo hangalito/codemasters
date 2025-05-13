@@ -10,6 +10,6 @@ values ('HTML', 'Curso de HTML', 20000, 'curso_html.png', current_timestamp, cur
        ('MySQL', 'Curso de MySQL', 90000, 'curso_mysql.png', current_timestamp, current_timestamp),
        ('JavaScript', 'Curso de JavaScript', 90000, 'curso_javascript.png', current_timestamp,
         current_timestamp),
-       ('C#', 'Curso de C#', 90000, 'curso_csharp.png', current_timestamp, current_timestamp),
+       ('C#', 'Curso de C#', 90000, 'curso_sharp.png', current_timestamp, current_timestamp),
        ('PHP', 'Curso de PHP', 45000, 'curso_php.png', current_timestamp, current_timestamp)
 ;

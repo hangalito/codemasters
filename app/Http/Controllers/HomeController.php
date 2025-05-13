@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Curso;
+use App\Models\CursoDestaque;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,7 +12,7 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $cursos = Curso::all();
+        $cursos = CursoDestaque::all();
         return view('index', [
             'cursos' => $cursos
         ]);

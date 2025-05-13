@@ -73,7 +73,11 @@
                           cols="6" rows="6" class="text-sm p-2 rounded-md border-2 border-gray-300"></textarea>
             </div>
 
-            <button class="bg-blue-900 text-white w-full p-2 mt-3 mb-3 rounded-md">Enviar</button>
+            <button
+                class="bg-blue-900 text-white w-full p-2 mt-3 mb-3 rounded-md hover:cursor-pointer hover:bg-blue-900"
+                disabled>
+                Enviar
+            </button>
         </form>
     </div>
 @endsection

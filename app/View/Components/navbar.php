@@ -11,7 +11,7 @@ class navbar extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $activePage)
+    public function __construct()
     {
         //
     }

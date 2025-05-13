@@ -18,7 +18,7 @@
                 <img src="{{ asset('img/logo.png') }}" alt="Code Masters" class="max-w-[200px]"/>
             </a>
         </div>
-        <nav class="flex-1 space-y-4 text-gray-300">
+        <nav class="flex-1 space-y-4 text-gray-300 flex flex-col">
             <a href="{{ route('alunos.dashboard') }}"
                class="block py-2 px-4 rounded hover:text-white hover:bg-blue-900">Dashboard</a>
             <a href="#" class="block py-2 px-4 rounded hover:text-white hover:bg-blue-900">Meus Cursos</a>

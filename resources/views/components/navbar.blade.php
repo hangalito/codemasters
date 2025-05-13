@@ -1,4 +1,4 @@
-<header class="bg-blue-950">
+<header class="bg-blue-950 sticky top-0 w-full">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex p-6 flex-row flex-nowrap">
         <div class="flex shrink-0 items-center">
             <a href="{{ route('home') }}">

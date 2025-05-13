@@ -9,7 +9,7 @@
     @yield('stylesheets')
 </head>
 <body>
-<x-navbar active-page="home"></x-navbar>
+<x-navbar></x-navbar>
 <main>
     @yield('content')
 </main>

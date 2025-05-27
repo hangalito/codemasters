@@ -45,9 +45,8 @@
 
     <section id="porque" class="min-h-screen m-3.5 not-sm:m-1">
         <h1 class="text-white text-3xl text-center uppercase font-semibold">Por que nos escolher?</h1>
-        <div
-            class="ps-9 pe-9 mt-3 mb-3 flex flex-row flex-nowrap scroll-auto gap-9 overflow-x-scroll max-w-full justify-center">
-            <div class="bg-blue-900 max-w-[250px] rounded-md p-2.5 pt-12 pb-12 flex flex-col gap-1.5">
+        <div class="flex flex-row justify-center-safe gap-6 overflow-x-auto px-3.5 py-6">
+            <div class="bg-blue-900 max-w-[250px] rounded-md p-2.5 pt-12 pb-12 flex flex-col gap-1.5 hover:scale-105 transition-transform">
                 <img class="rounded-full max-w-[200px]" src="{{ asset('img/qualidades/graduacao.png') }}"
                      alt="Graduação">
                 <h1 class="text-white text-xl font-bold text-center">Aprendizado Qualitativo</h1>
@@ -56,7 +55,7 @@
                 </p>
             </div>
 
-            <div class="bg-blue-900 max-w-[250px] rounded-md p-2.5 pt-12 pb-12 flex flex-col gap-1.5">
+            <div class="bg-blue-900 max-w-[250px] rounded-md p-2.5 pt-12 pb-12 flex flex-col gap-1.5 hover:scale-105 transition-transform">
                 <img class="rounded-full max-w-[200px]" src="{{ asset('img/qualidades/equipe.png') }}"
                      alt="Trabalho em equipe">
                 <h1 class="text-white text-xl font-bold text-center">Colaboração Em Equipe</h1>
@@ -65,7 +64,7 @@
                 </p>
             </div>
 
-            <div class="bg-blue-900 max-w-[250px] rounded-md p-2.5 pt-12 pb-12 flex flex-col gap-1.5">
+            <div class="bg-blue-900 max-w-[250px] rounded-md p-2.5 pt-12 pb-12 flex flex-col gap-1.5 hover:scale-105 transition-transform">
                 <img class="rounded-full max-w-[200px]" src="{{ asset('img/qualidades/networking.png') }}"
                      alt="Networking">
                 <h1 class="text-white text-xl font-bold text-center">Recursos avançados</h1>
@@ -74,7 +73,7 @@
                 </p>
             </div>
 
-            <div class="bg-blue-900 max-w-[250px] rounded-md p-2.5 pt-12 pb-12 flex flex-col gap-1.5">
+            <div class="bg-blue-900 max-w-[250px] rounded-md p-2.5 pt-12 pb-12 flex flex-col gap-1.5 hover:scale-105 transition-transform">
                 <img class="rounded-full max-w-[200px] self-center" src="{{ asset('img/qualidades/security.png') }}"
                      alt="Segurança dos seus dados">
                 <h1 class="text-white text-xl font-bold text-center">Segurança dos seus dados</h1>
